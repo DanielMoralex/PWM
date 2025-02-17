@@ -5,6 +5,7 @@ body {
 
 header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between; /* Separa el título y los botones */
   align-items: center; /* Alinea los elementos verticalmente */
   padding: 15px 20px;
@@ -28,4 +29,28 @@ header {
 
 .buttons a:hover {
   background-color: #ADE1E5;
+}
+
+nav {
+  display: flex;
+  justify-content: center; /* Centra el contenido dentro del nav */
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Estilos para la lista */
+nav ul {
+  list-style: none; /* Elimina los puntos de la lista */
+  display: flex; /* Poner los elementos en línea */
+  gap: 20px; /* Espaciado entre elementos */
+  padding: 0;
+}
+
+/* Estilos para los enlaces */
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
