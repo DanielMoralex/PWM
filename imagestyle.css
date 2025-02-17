@@ -1,0 +1,5 @@
+.image {
+  width: 100%; /* Hace que la imagen ocupe todo el ancho */
+  height: auto; /* Mantiene la proporción original */
+  display: block; /* Evita espacios extra alrededor de la imagen */
+}
