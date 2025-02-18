@@ -15,9 +15,15 @@ header {
   color: black;
 }
 
+h1 {
+  margin-left: 25px;
+  font-size: 40px;
+}
+
 .buttons {
   display: flex;
   gap: 10px;
+  margin-right: 60px;
 }
 
 .buttons a {
