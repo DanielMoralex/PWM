@@ -23,7 +23,7 @@ h1 {
 .buttons {
   display: flex;
   gap: 10px;
-  margin-right: 60px;
+  margin-right: 40px;
 }
 
 .buttons a {

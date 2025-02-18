@@ -5,4 +5,14 @@ footer {
   text-align: center;
   padding: 15px;
   width: 100%;
+  justify-content: space-between;
+}
+
+.social-icons {
+  display: flex;
+}
+
+p {
+  display: flex;
+  margin-right: 100px;
 }
