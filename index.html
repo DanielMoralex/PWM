@@ -26,26 +26,21 @@
 
 <body>
 
-<div id="header-container"></div>
-<script>
-  fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header-container").innerHTML = data;
-  });
-</script>
+<header>
+  <div xlu-include-file="header.html"></div> <!-- Aquí se cargará header.html -->
+</header>
 
   <img src="fachada-de-colegio-confucio.gif" alt="Descripción de la imagen" class="image">
 
   <main class="content"></main>
 
-<div id="footer-container"></div>
+<footer>
+  <div xlu-include-file="footer.html"></div> <!-- Aquí se cargará header.html -->
+</footer>
+
+<script src="includefile.js"></script> <!-- Cargar el script externo -->
 <script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-container").innerHTML = data;
-    });
+  xLuIncludeFile(); // Ejecutar la función después de cargar el script
 </script>
 
 </body>
