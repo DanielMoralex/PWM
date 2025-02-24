@@ -1,3 +1,14 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 footer {
   display: flex;
   background-color: #5ad7ac;
@@ -6,6 +17,8 @@ footer {
   padding: 15px;
   width: 100%;
   justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: 0;
 }
 
 .social-icons {

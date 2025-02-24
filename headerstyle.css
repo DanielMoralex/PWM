@@ -1,4 +1,4 @@
-body {
+html, body {
   margin: 0;
   font-family: Arial, sans-serif;
   overflow-x: hidden; /* Oculta el desplazamiento horizontal */
@@ -13,6 +13,7 @@ header {
   padding: 15px 20px;
   background-color: #81D2D0;
   color: black;
+  margin-top: 0;
 }
 
 h1 {
@@ -31,7 +32,7 @@ h1 {
   color: black;
   background-color: #93DEDD;
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: background 0.3s;
 }
 
