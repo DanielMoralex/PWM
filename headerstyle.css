@@ -12,14 +12,13 @@ header {
   flex-wrap: wrap;
   justify-content: space-between; /* Separa el título y los botones */
   align-items: center; /* Alinea los elementos verticalmente */
-  padding: 15px 20px;
+  padding: 20px 20px;
   background-color: #81D2D0;
 }
 
 h1 {
   position: absolute;
-  left: 50%;
-  top: 15px;
+  left: 48%;
   transform: translateX(-50%);
   font-size: 40px;
 }
@@ -44,17 +43,16 @@ h1 {
 }
 
 nav {
-  display: flex;
-  justify-content: center; /* Centra el contenido dentro del nav */
-  width: 100%;
-  margin-top: 10px;
+  position: absolute;
+  left: 34%;
+  top: 90px;
 }
 
 /* Estilos para la lista */
 nav ul {
   list-style: none; /* Elimina los puntos de la lista */
   display: flex; /* Poner los elementos en línea */
-  gap: 20px; /* Espaciado entre elementos */
+  gap: 50px; /* Espaciado entre elementos */
   padding: 0;
 }
 
@@ -62,7 +60,13 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: black;
+  font-size: 20px;
   padding: 10px 15px;
   border-radius: 5px;
   transition: background 0.3s;
+}
+
+.logo {
+  display: block;
+  margin-top: 5px;
 }
