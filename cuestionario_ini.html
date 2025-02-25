@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Iniciar Sesión</title>
-  <link rel="icon" href="/deepseek-ai-icon-seeklogo.ico" sizes="any">
+  <title>Registro</title>  <link rel="icon" href="/deepseek-ai-icon-seeklogo.ico" sizes="any">
   <link rel="apple-touch-icon" href="deepseek-ai-icon-seeklogo.png">
 
   <link rel="manifest" href="site.webmanifest">
@@ -13,26 +12,19 @@
   <link rel="stylesheet" href="/imagestyle.css">
   <link rel="stylesheet" href="/footerstyle.css">
   <link rel="stylesheet" href="logo.css">
-  <link rel="stylesheet" href="register.css">
-  <link rel="stylesheet" href="/headerstyle.css">
   <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
 
-<div id="header-container"></div>
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header-container").innerHTML = data;
-    });
-</script>
+<header>
+  <div xlu-include-file="header.html"></div> <!-- Aquí se cargará header.html -->
+</header>
 
 <main class="login-container">
 
   <!-- Formulario de Inicio de Sesión -->
-  <form class="login-form">
+  <form class="registration-form login-form">
     <h2>Iniciar Sesión</h2>
 
     <label for="login-email">Correo Electrónico:</label>
@@ -44,13 +36,13 @@
     <button type="submit">Ingresar</button>
   </form>
 
-  <div id="footer-container"></div>
+  <footer>
+    <div xlu-include-file="footer.html"></div> <!-- Aquí se cargará header.html -->
+  </footer>
+
+  <script src="includefile.js"></script> <!-- Cargar el script externo -->
   <script>
-    fetch("footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer-container").innerHTML = data;
-      });
+    xLuIncludeFile(); // Ejecutar la función después de cargar el script
   </script>
 
   <script>
