@@ -41,6 +41,14 @@
 <script src="includefile.js"></script> <!-- Cargar el script externo -->
 <script>
   xLuIncludeFile(); // Ejecutar la función después de cargar el script
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const userName = urlParams.get('user');
+
+  // Mostrar el mensaje de bienvenida si el nombre está presente
+  if (userName) {
+    document.getElementById("message-text").textContent = `✅ Sesión iniciada a nombre de ${userName}`;
+  }
 </script>
 
 </body>

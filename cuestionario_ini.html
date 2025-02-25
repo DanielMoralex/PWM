@@ -63,7 +63,7 @@
       if (storedProfile.email === emailInput && storedProfile.password === passwordInput) {
         alert("✅ Inicio de sesión exitoso.");
         // Aquí puedes redirigir a otra página si lo necesitas
-        // window.location.href = "dashboard.html";
+        window.location.href = "index.html?user=" + encodeURIComponent(storedProfile.name);
       } else {
         alert("❌ Correo o contraseña incorrectos.");
       }
