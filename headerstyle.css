@@ -6,26 +6,28 @@ html, body {
 }
 
 header {
+  position: relative;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* Separa el título y los botones */
   align-items: center; /* Alinea los elementos verticalmente */
   padding: 15px 20px;
   background-color: #81D2D0;
-  color: black;
-  margin-top: 0;
 }
 
 h1 {
-  margin-left: 25px;
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  transform: translateX(-50%);
   font-size: 40px;
-  justify-content: center;
 }
 
 .buttons {
   display: flex;
   gap: 10px;
-  margin-right: 40px;
+  margin-right: 100px;
 }
 
 .buttons a {
