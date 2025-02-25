@@ -2,6 +2,7 @@ SERVICIO WEB PARA UN COLEGIO:
 
      - Iván Pérez Díaz
      - Daniel Morales Sosa
+     - Grupo 41.5
 
 
 DESCRIPCIÓN:
