@@ -8,15 +8,8 @@
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
   <link rel="icon" href="/deepseek-ai-icon-seeklogo.ico" sizes="any">
   <link rel="apple-touch-icon" href="deepseek-ai-icon-seeklogo.png">
-
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="/headerstyle.css">
   <link rel="stylesheet" href="/imagestyle.css">
@@ -26,13 +19,11 @@
 
 <body>
 
-<header>
-  <div xlu-include-file="header.html"></div> <!-- Aquí se cargará header.html -->
-</header>
+<header id="header-container"></header>
 
-  <img src="fachada-de-colegio-confucio.gif" alt="Descripción de la imagen" class="image">
+<img src="fachada-de-colegio-confucio.gif" alt="Descripción de la imagen" class="image">
 
-  <main class="content"></main>
+<main class="content"></main>
 
 <footer>
   <div xlu-include-file="footer.html"></div> <!-- Aquí se cargará header.html -->
@@ -42,10 +33,17 @@
 <script>
   xLuIncludeFile(); // Ejecutar la función después de cargar el script
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const userName = urlParams.get('user');
+  // Cargar el contenido de header.html dinámicamente en el contenedor
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+    })
+    .catch(error => console.error('Error al cargar header.html:', error));
 
   // Mostrar el mensaje de bienvenida si el nombre está presente
+  const urlParams = new URLSearchParams(window.location.search);
+  const userName = urlParams.get('user');
   if (userName) {
     document.getElementById("message-text").textContent = `✅ Sesión iniciada a nombre de ${userName}`;
   }

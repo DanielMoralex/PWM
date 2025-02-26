@@ -11,7 +11,7 @@
 <body>
 
 <header>
-  <img src="/deepseek-ai-icon-seeklogo.png"  class="logo">
+  <img src="/deepseek-ai-icon-seeklogo.png" class="logo">
   <h1>Lorem Ipsum</h1>
   <div class="buttons">
     <a href="cuestionario_ini.html">Inicio</a>
@@ -20,11 +20,52 @@
   <nav>
     <ul>
       <li><a href="#">Noticias</a></li>
-      <li><a href="#">Mi Página</a></li>
+      <li><a href="#" id="miPaginaBtn">Mi Página</a></li>
       <li><a href="#">Tienda</a></li>
     </ul>
   </nav>
 </header>
+
+<script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      const miPaginaBtn = document.getElementById("miPaginaBtn");
+
+      if (!miPaginaBtn) {
+        console.error("No se encontró el botón Mi Página");
+        return;
+      }
+
+      miPaginaBtn.addEventListener("click", function(event) {
+        event.preventDefault(); // Evitar la acción predeterminada del enlace
+        console.log("Botón Mi Página clickeado");
+
+        // Comprobamos si la sesión está iniciada y el rol del usuario
+        const session = localStorage.getItem('session'); // Suponiendo que guardas el estado de la sesión en localStorage
+        console.log("Session: ", session);
+
+        if (session) {
+          const userRole = localStorage.getItem('userRole'); // Rol del usuario (profesor o alumno)
+          console.log("User Role: ", userRole);
+
+          if (userRole === 'profesor') {
+            console.log("Redirigiendo al perfil de profesor");
+            window.location.href = 'perfil_profesor.html'; // Redirigir al perfil de profesor
+          } else if (userRole === 'alumno') {
+            console.log("Redirigiendo al perfil de alumno");
+            window.location.href = 'perfil_alumno.html'; // Redirigir al perfil de alumno
+          } else {
+            console.log("❌ Rol de usuario desconocido.");
+            alert("❌ Rol de usuario desconocido.");
+          }
+        } else {
+          console.log("No hay sesión activa. Redirigiendo al inicio.");
+          window.location.href = 'cuestionario_ini.html'; // Redirigir si no hay sesión
+        }
+      });
+    }, 100); // Esperar 100ms antes de ejecutar el código
+  });
+</script>
 
 </body>
 </html>
