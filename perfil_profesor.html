@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil</title>  <link rel="icon" href="/deepseek-ai-icon-seeklogo.ico" sizes="any">
+    <link rel="apple-touch-icon" href="deepseek-ai-icon-seeklogo.png">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="/headerstyle.css">
+    <link rel="stylesheet" href="/imagestyle.css">
+    <link rel="stylesheet" href="/footerstyle.css">
+    <link rel="stylesheet" href="logo.css">
+    <link rel="stylesheet" href="perfil_profesor.css">
+  </head>
+</head>
+<body>
+
+<header>
+  <div xlu-include-file="header.html"></div> <!-- Aquí se cargará header.html -->
+</header>
+
+<div class="container">
+  <div class="left-image">
+    <img src="PerfilUsuario.png" alt="Imagen del Perfil">
+    <p id="user-name" class="user-name">Cargando usuario...</p>
+  </div>
+  <div class="center-image">
+    <img src="center-image.jpg" alt="Imagen central">
+  </div>
+  <div class="right-section">
+    <h2>Reuniones</h2>
+    <p class="reuniones">Aquí puedes ver y gestionar tus reuniones.</p>
+  </div>
+</div>
+
+<footer>
+  <div xlu-include-file="footer.html"></div> <!-- Aquí se cargará header.html -->
+</footer>
+
+<script src="includefile.js"></script> <!-- Cargar el script externo -->
+<script>
+  xLuIncludeFile(); // Ejecutar la función después de cargar el script
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Intentar obtener los datos del usuario desde localStorage
+    const userData = JSON.parse(localStorage.getItem("perfil"));
+
+    if (userData && userData.name) {
+      document.getElementById("user-name").textContent = userData.name;
+    } else {
+      document.getElementById("user-name").textContent = "Usuario Desconocido";
+    }
+  });
+</script>
+
+</body>
+</html>

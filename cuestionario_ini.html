@@ -62,8 +62,15 @@
 
       if (storedProfile.email === emailInput && storedProfile.password === passwordInput) {
         alert("✅ Inicio de sesión exitoso.");
-        // Aquí puedes redirigir a otra página si lo necesitas
-        window.location.href = "index.html?user=" + encodeURIComponent(storedProfile.name);
+
+        // Verificar el rol del usuario y redirigir
+        if (storedProfile.role === "profesor") {
+          alert("Se va a redirigir a su 'Mi Página'");
+          window.location.href = "perfil_profesor.html?user=" + encodeURIComponent(storedProfile.name);
+        } else {
+          window.location.href = "index.html?user=" + encodeURIComponent(storedProfile.name);
+        }
+
       } else {
         alert("❌ Correo o contraseña incorrectos.");
       }
