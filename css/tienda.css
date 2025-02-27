@@ -1,0 +1,58 @@
+.contenedor {
+    display: flex;               /* Distribuye los elementos en fila */
+    justify-content: space-between;     /* Centra los bloques en el contenedor */
+    align-items: center;         /* Centra los elementos verticalmente */
+    gap: 0;                      /* Elimina el espacio entre las imágenes */
+}
+
+.imagen-izquierda img,
+.imagen-central img {
+    width: 400px;               /* Tamaño de las imágenes */
+    border-radius: 20px;        /* Bordes redondeados */
+}
+
+.imagen-central {
+    display: flex;              /* Permite alinear los botones debajo */
+    flex-direction: column;     /* Alineación vertical */
+    align-items: center;        /* Centra los elementos */
+    gap: 20px;                  /* Espacio entre imagen y botones */
+    padding-right: 100px;
+}
+
+.imagen-izquierda {
+    padding-left: 40px;
+    display: flex;              /* Permite alinear los botones debajo */
+    flex-direction: column;     /* Alineación vertical */
+    align-items: center;        /* Centra los elementos */
+    gap: 20px;                  /* Espacio entre imagen y botones */
+}
+
+.boton1 {
+    display: flex;
+    gap: 20px;
+}
+
+.boton2 {
+    display: flex;
+    gap: 20px;
+}
+
+.boton-derecha {
+    display: flex;
+    gap: 20px;
+    padding-right: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #81D2D0;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #ADE1E5;
+}
