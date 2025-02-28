@@ -43,22 +43,9 @@ h1 {
   background-color: #ADE1E5;
 }
 
-#miPaginaBtn {
-  text-decoration: none;
-  color: black;
-  background-color: #93DEDD;
-  padding: 10px 15px;
-  border-radius: 20px;
-  transition: background 0.3s;
-}
-
-#miPaginaBtn:hover {
-  background-color: #ADE1E5;
-}
-
 nav {
   position: absolute;
-  left: 36%;
+  left: 42%;
   top: 125px;
 }
 
