@@ -3,6 +3,7 @@
     justify-content: space-between;     /* Centra los bloques en el contenedor */
     align-items: center;         /* Centra los elementos verticalmente */
     gap: 0;                      /* Elimina el espacio entre las imágenes */
+    margin-bottom: 25px;
 }
 
 .imagen-izquierda img,

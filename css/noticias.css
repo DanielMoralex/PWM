@@ -1,43 +1,39 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-header, footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
+/* Estilo general para el contenedor principal */
 .main-content {
-    display: flex;
-    flex: 1;
-    padding: 1rem;
-    gap: 1rem;
+    display: flex; /* Usamos Flexbox para alinear la imagen y el bloque de noticias */
+    justify-content: space-between; /* Espacio entre la imagen y las noticias */
+    padding: 20px;
 }
-.carousel {
-    flex: 1;
-    background: #f4f4f4;
-    padding: 1rem;
-    border-radius: 10px;
+
+/* Estilo para la sección de la imagen */
+.image-section {
+    width: 45%; /* Asigna un 45% de ancho a la imagen */
 }
-.news {
-    flex: 1;
-    background: #eaeaea;
-    padding: 1rem;
-    border-radius: 10px;
+
+.image-section img {
+    width: 100%; /* La imagen ocupará todo el ancho disponible de su contenedor */
+    height: auto; /* Mantener la relación de aspecto de la imagen */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
 }
-.swiper {
-    width: 100%;
-    height: 300px;
+
+/* Estilo para la sección de noticias */
+.news-section {
+    width: 50%; /* Asigna un 50% de ancho al bloque de noticias */
+    background-color: #f4f4f4; /* Fondo gris claro */
+    padding: 20px; /* Espaciado interior */
+    border-radius: 10px; /* Bordes redondeados */
 }
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ccc;
+
+/* Estilo para los títulos de las noticias */
+.news-section h2 {
+    margin-bottom: 15px;
+    color: #333; /* Color de texto */
+}
+
+/* Estilo para los párrafos de noticias */
+.news-section p {
+    margin-bottom: 10px;
+    color: #555; /* Color de texto */
     font-size: 1.5rem;
-    text-align: center;
+    line-height: 1.6;
 }
