@@ -11,10 +11,10 @@ body {
 .container {
   display: flex;
   width: 80%;
-  max-width: 1200px;
+  max-width: 600%;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 120px;
 }
 
 .left-image {
@@ -45,7 +45,6 @@ body {
 .center-image {
   margin-top: 100px;
   margin-bottom: 100px;
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 400%;

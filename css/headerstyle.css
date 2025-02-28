@@ -12,7 +12,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between; /* Separa el título y los botones */
   align-items: center; /* Alinea los elementos verticalmente */
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 40px;
   background-color: #81D2D0;
   border-bottom: 4px solid #519897;
@@ -22,7 +22,7 @@ h1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .buttons {
@@ -48,7 +48,7 @@ h1 {
 nav {
   position: absolute;
   left: 42%;
-  top: 144px;
+  top: 152px;
 }
 
 nav ul {
