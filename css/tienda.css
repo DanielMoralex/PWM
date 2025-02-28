@@ -28,24 +28,22 @@
     gap: 20px;                  /* Espacio entre imagen y botones */
 }
 
-.boton1 {
-    display: flex;
-    gap: 20px;
-}
-
-.boton2 {
-    display: flex;
-    gap: 20px;
+button {
+    padding: 10px 20px;
+    background-color: #81D2D0;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .boton-derecha {
     display: flex;
     gap: 20px;
+    font-size: 2rem;
     padding-right: 200px;
-}
-
-button {
-    padding: 10px 20px;
     background-color: #81D2D0;
     color: black;
     border: none;
