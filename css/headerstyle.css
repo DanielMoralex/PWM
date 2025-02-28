@@ -12,22 +12,24 @@ header {
   flex-wrap: wrap;
   justify-content: space-between; /* Separa el título y los botones */
   align-items: center; /* Alinea los elementos verticalmente */
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 40px;
   background-color: #81D2D0;
+  border-bottom: 4px solid #519897;
 }
 
 h1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 40px;
+  font-size: 4rem;
 }
 
 .buttons {
   display: flex;
   gap: 10px;
   margin-right: 50px;
+  font-size: 20px;
 }
 
 .buttons a {
@@ -46,7 +48,7 @@ h1 {
 nav {
   position: absolute;
   left: 42%;
-  top: 125px;
+  top: 144px;
 }
 
 nav ul {
@@ -61,8 +63,12 @@ nav ul li a {
   color: black;
   font-size: 20px;
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #E0F7FA; /* Cambia este color si prefieres otro */
 }
 
 .logo {
