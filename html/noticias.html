@@ -1,83 +1,47 @@
-<!doctype html>
-<html class="no-js" lang="es">
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Noticias</title>  <link rel="icon" href="/img/deepseek-ai-icon-seeklogo.ico" sizes="any">
-    <link rel="apple-touch-icon" href="../img/deepseek-ai-icon-seeklogo.png">
-
-    <link rel="manifest" href="../other/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Layout</title>
     <link rel="stylesheet" href="/css/headerstyle.css">
     <link rel="stylesheet" href="/css/imagestyle.css">
     <link rel="stylesheet" href="/css/footerstyle.css">
     <link rel="stylesheet" href="../css/logo.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/noticias.css">
+    <style>
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .carousel, .news {
+            width: 48%;
+        }
+    </style>
 </head>
-
 <body>
-
 <header>
-    <div xlu-include-file="header.html"></div> <!-- Aquí se cargará header.html -->
+    <div xlu-include-file="header.html"></div>
 </header>
-
-<main class="login-container">
-
-    <!-- Formulario de Inicio de Sesión -->
-    <form class="registration-form login-form">
-        <h2>Iniciar Sesión</h2>
-
-        <label for="login-email">Correo Electrónico:</label>
-        <input type="email" id="login-email" name="login-email" required>
-
-        <label for="login-password">Contraseña:</label>
-        <input type="password" id="login-password" name="login-password" required>
-
-        <button type="submit">Ingresar</button>
-    </form>
-
-    <footer>
-        <div xlu-include-file="footer.html"></div> <!-- Aquí se cargará header.html -->
-    </footer>
-
-    <script src="../js/includefile.js"></script> <!-- Cargar el script externo -->
-    <script>
-        xLuIncludeFile(); // Ejecutar la función después de cargar el script
-    </script>
-
-    <script>
-        // Manejo del Inicio de Sesión
-        document.querySelector(".login-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const emailInput = document.getElementById("login-email").value.trim();
-            const passwordInput = document.getElementById("login-password").value.trim();
-
-            const storedProfile = JSON.parse(localStorage.getItem("perfil"));
-
-            if (!storedProfile) {
-                alert("❌ No hay usuarios registrados. Regístrate primero.");
-                return;
-            }
-
-            if (storedProfile.email === emailInput && storedProfile.password === passwordInput) {
-                alert("✅ Inicio de sesión exitoso.");
-
-                // Verificar el rol del usuario y redirigir
-                if (storedProfile.role === "profesor") {
-                    alert("Se va a redirigir a su 'Mi Página'");
-                    window.location.href = "perfil_profesor.html?user=" + encodeURIComponent(storedProfile.name);
-                } else {
-                    window.location.href = "perfil_alumno.html?user=" + encodeURIComponent(storedProfile.name);
-                }
-
-            } else {
-                alert("❌ Correo o contraseña incorrectos.");
-            }
-        });
-    </script>
-
-</main>
-
+<div class="main-content">
+    <div class="carousel">
+        <img src="../img/default-image.jpg" alt="Imagen Carrusel" style="width: 100%; height: auto; border-radius: 10px;">
+    </div>
+    <div class="news">
+        <h2>Últimas Noticias</h2>
+        <p>News Item 1</p>
+        <p>News Item 2</p>
+        <p>News Item 3</p>
+    </div>
+</div>
+<footer>
+    <div xlu-include-file="footer.html"></div>
+</footer>
+<script src="../js/includefile.js"></script>
+<script>
+    xLuIncludeFile();
+</script>
 </body>
 </html>
+
