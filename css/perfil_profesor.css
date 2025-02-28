@@ -43,10 +43,12 @@ body {
 
 
 .center-image {
-  flex: 1;
+  margin-top: 100px;
+  margin-bottom: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 300%;
 }
 
 .right-section {
