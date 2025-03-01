@@ -5,9 +5,11 @@ SERVICIO WEB PARA UN COLEGIO:
      - Grupo de trabajo: 41.5
 
 
+
 DESCRIPCIÓN:
 
      El proyecto consiste en la creación de un servicio web para un colegio en donde los usuarios pueden entrar en la tienda de dicho colegio y ver las noticias importantes del mismo, adicionalmente, los usuarios autenticados como profesores y alumnos pueden acceder a su perfil para ver su horario e información adicional relevante.
+
 
 
 REQUISITOS FUNCIONALES:
@@ -27,6 +29,7 @@ REQUISITOS FUNCIONALES:
      - Un usuario autenticado como profesor podrá ver su horario y sus reuniones en la pestaña "Perfil".
 
 
+
 REQUISITOS NO FUNCIONALES:
 
      - El sistema deberá ser sencillo de usar (intuitivo).
@@ -37,10 +40,6 @@ REQUISITOS NO FUNCIONALES:
 
      - El sistema deberá respetar la ley de protección de datos en las imángenes mostradas.
 
-
-UBICACIÓN DEL PDF CON MOCKUPS Y STORYBOARD:
-
-     - Rellenar el campo
 
 
 PÁGINAS .HTML DEL PROYECTO:
@@ -73,6 +72,7 @@ TEMPLATES:
      - footer.html, se carga de manera dinámica en todas las páginas mediante un archivo .js llamado includefile.js
 
 
+
 OTROS:
 
      Se ha creado un código con JavaScript (includefile.js) para cargar en las páginas .html el header y el footer sin tener que repetir en todas las páginas el script correspondiente para cargar el diseño en cada página.
@@ -80,6 +80,7 @@ OTROS:
      Adicionalmente se ha tenido en cuenta la UX (user experience) y se ha dado dinamismo a los botones de navegación y los botones de inicio y registro.
 
      En el .html de registro se ha añadido el botón de registrarse, dicho botón guarda la información en el buscador de manera local y mediante un script redirige al usuario a la página de autenticación. Una vez autenticado el usuario, dependiendo de su ROL (profesor/alumno) se le redirige mediante un script a su perfil (solo accesible mediante autenticación).
+
 
 
 ENLACES:
