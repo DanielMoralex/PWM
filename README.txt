@@ -65,6 +65,7 @@ PÁGINAS .HTML DEL PROYECTO:
      - 404.html: Archivo no contemplado en los mockups que se usa en caso de no tener redirección a una página (caso por ejemplo de los iconos de redes sociales).
 
 
+
 TEMPLATES:
 
      - header.html, se carga de manera dinámica en todas las páginas mediante un archivo .js llamado includefile.js.
