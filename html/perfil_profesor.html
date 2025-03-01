@@ -43,16 +43,14 @@
 <script>
   xLuIncludeFile(); // Ejecutar la función después de cargar el script
 
-  document.addEventListener("DOMContentLoaded", function() {
-    // Intentar obtener los datos del usuario desde localStorage
-    const userData = JSON.parse(localStorage.getItem("perfil"));
+  // Intentar obtener los datos del usuario desde localStorage
+  const userData = JSON.parse(localStorage.getItem("perfil"));
 
-    if (userData && userData.name) {
-      document.getElementById("user-name").textContent = userData.name;
-    } else {
-      document.getElementById("user-name").textContent = "Usuario Desconocido";
-    }
-  });
+  if (userData && userData.name) {
+    document.getElementById("user-name").textContent = userData.name;
+  } else {
+    document.getElementById("user-name").textContent = "Usuario Desconocido";
+  }
 </script>
 
 </body>

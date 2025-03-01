@@ -1,65 +1,63 @@
 body {
   display: flex;
+  flex-direction: column; /* Permite que el contenido se apile verticalmente */
+  min-height: 100vh; /* Garantiza que el body ocupe toda la pantalla */
+  margin: 0; /* Elimina el margen predeterminado del body */
+  background-color: #f4f4f4;
+}
+
+main {
+  flex: 1; /* Permite que el contenido principal ocupe el espacio disponible */
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   margin-top: 100px;
   margin-bottom: 100px;
-  background-color: #f4f4f4;
 }
 
 .container {
   display: flex;
-  width: 80%;
-  max-width: 600%;
-  justify-content: space-between;
-  align-items: center;
-  gap: 120px;
+  justify-content: space-evenly; /* Distribuye los elementos con el mismo espacio entre ellos */
+  align-items: center; /* Centra los elementos verticalmente */
+  width: 100%; /* Ocupa el ancho disponible*/
+  max-width: 1200px; /* Máximo ancho para evitar que los elementos se salgan */
+  gap: 100px; /* Ajusta la separación entre los elementos */
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .left-image {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra la imagen y el texto horizontalmente */
-  justify-content: center; /* Centra los elementos verticalmente si es necesario */
-  margin-top: 60px;
-}
-
-.left-image img {
-  width: 150px;
-  height: auto;
-  align-self: center; /* Centra la imagen horizontalmente */
-}
-
-.user_name {
-  position: relative;
-  text-align: center; /* Centra el texto */
-  font-size: 18px;
-  font-weight: normal;
-  margin-top: 10px;
-  color: #333;
-  width: auto;
-}
-
-.center-image {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  justify-content: center;
-  align-items: center;
-  width: 400%;
-  border: 3px solid #81D2D0;
-  border-radius: 10px;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  width: 200px; /* Tamaño fijo para los lados */
+  padding: 10px;
 }
 
 .right-section {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  width: 200px; /* Tamaño fijo para los lados */
+  flex: 1;
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px; /* Tamaño fijo para la imagen central */
+  height: auto;
+  border: 3px solid #81D2D0;
+  border-radius: 10px;
 }
 
 img {
