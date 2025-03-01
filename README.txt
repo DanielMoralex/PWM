@@ -45,19 +45,41 @@ UBICACIÓN DEL PDF CON MOCKUPS Y STORYBOARD:
 
 PÁGINAS .HTML DEL PROYECTO:
 
-     - index.html: Archivo que contiene la página principal del colegio, implementa el mockup "PONER NOMBRE".
+     - index.html: Archivo que contiene la página principal del colegio, implementa el mockup 1.
 
-     - poner resto de .htmls
+     - cuestionario_ini.html: Archivo que contiene el cuestionario de autenticación de la página web, implementa el mockup "NUMERO".
+
+     - cuestionario_reg.html: Archivo que contiene el cuestionario de registro de la página web, implementa el mockup "NUMERO"
+
+     - header.html: Archivo (template) que contiene el header y que se carga de manera dinámica mediante un .js en los demás htmls del proyecto.
+
+     - footer.html: Archivo (template) que contiene el footer y que se carga de manera dinámica mediante un .js en los demás htmls del proyecto.
+
+     - noticias.html: Archivo que contiene la página de noticias de la página web, implementa el mockup "NUMERO".
+
+     - tienda.html: Archivo que contiene la página de tienda de la página web (los productos proceden de otro dominio http), implementa el mockup "NUMERO".
+
+     - perfil_alumno.html: Archivo que contiene el perfil de los usuarios autenticados como alumnos, implementa el mockup "NUMERO".
+
+     - perfil_profesor.html: Archivo que contiene el perfil de los usuarios autenticados como profesores, implementa el mockup "NUMERO".
+
+     - 404.html: Archivo no contemplado en los mockups que se usa en caso de no tener redirección a una página (caso por ejemplo de los iconos de redes sociales).
 
 
 TEMPLATES:
 
-     - Poner el nombre del template y el archivo que cargan
+     - header.html, se carga de manera dinámica en todas las páginas mediante un archivo .js llamado includefile.js.
+
+     - footer.html, se carga de manera dinámica en todas las páginas mediante un archivo .js llamado includefile.js
 
 
 OTROS:
 
-     Se ha creado un código con JavaScript (nombre.js) para cargar en las páginas .html el header y el footer sin tener que repetir en todas las páginas el script correspondiente para cargar el diseño en cada página. (PONER MÁS COSAS)
+     Se ha creado un código con JavaScript (includefile.js) para cargar en las páginas .html el header y el footer sin tener que repetir en todas las páginas el script correspondiente para cargar el diseño en cada página.
+
+     Adicionalmente se ha tenido en cuenta la UX (user experience) y se ha dado dinamismo a los botones de navegación y los botones de inicio y registro.
+
+     En el .html de registro se ha añadido el botón de registrarse, dicho botón guarda la información en el buscador de manera local y mediante un script redirige al usuario a la página de autenticación. Una vez autenticado el usuario, dependiendo de su ROL (profesor/alumno) se le redirige mediante un script a su perfil (solo accesible mediante autenticación).
 
 
 ENLACES:
@@ -65,4 +87,6 @@ ENLACES:
      - Figma: https://www.figma.com/proto/0MOBd65uu5fgIg2GpMYa6t/Colegio?node-id=14-3&starting-point-node-id=1%3A2&t=qQfSGiU0IkKuHp61-1
      
      - Trello: https://trello.com/invite/b/67a25de668324d36cdb09237/ATTIcebf0ce846b7338dc51aec4868ecd8b1B558727B/pwm
+
+     - PDF/Mockups: 
 
