@@ -90,5 +90,3 @@ ENLACES:
      
      - Trello: https://trello.com/invite/b/67a25de668324d36cdb09237/ATTIcebf0ce846b7338dc51aec4868ecd8b1B558727B/pwm
 
-     - PDF/Mockups: 
-
