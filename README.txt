@@ -46,21 +46,21 @@ PÁGINAS .HTML DEL PROYECTO:
 
      - index.html: Archivo que contiene la página principal del colegio, implementa el mockup 1.
 
-     - cuestionario_ini.html: Archivo que contiene el cuestionario de autenticación de la página web, implementa el mockup "NUMERO".
+     - cuestionario_ini.html: Archivo que contiene el cuestionario de autenticación de la página web, implementa el mockup 3.
 
-     - cuestionario_reg.html: Archivo que contiene el cuestionario de registro de la página web, implementa el mockup "NUMERO"
+     - cuestionario_reg.html: Archivo que contiene el cuestionario de registro de la página web, implementa el mockup 2.
 
      - header.html: Archivo (template) que contiene el header y que se carga de manera dinámica mediante un .js en los demás htmls del proyecto.
 
      - footer.html: Archivo (template) que contiene el footer y que se carga de manera dinámica mediante un .js en los demás htmls del proyecto.
 
-     - noticias.html: Archivo que contiene la página de noticias de la página web, implementa el mockup "NUMERO".
+     - noticias.html: Archivo que contiene la página de noticias de la página web, implementa el mockup 4.
 
-     - tienda.html: Archivo que contiene la página de tienda de la página web (los productos proceden de otro dominio http), implementa el mockup "NUMERO".
+     - tienda.html: Archivo que contiene la página de tienda de la página web (los productos proceden de otro dominio http), implementa el mockup 7.
 
-     - perfil_alumno.html: Archivo que contiene el perfil de los usuarios autenticados como alumnos, implementa el mockup "NUMERO".
+     - perfil_alumno.html: Archivo que contiene el perfil de los usuarios autenticados como alumnos, implementa el mockup 5.
 
-     - perfil_profesor.html: Archivo que contiene el perfil de los usuarios autenticados como profesores, implementa el mockup "NUMERO".
+     - perfil_profesor.html: Archivo que contiene el perfil de los usuarios autenticados como profesores, implementa el mockup 6.
 
      - 404.html: Archivo no contemplado en los mockups que se usa en caso de no tener redirección a una página (caso por ejemplo de los iconos de redes sociales).
 
