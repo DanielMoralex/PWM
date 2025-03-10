@@ -18,37 +18,173 @@
 </head>
 
 <body>
+<div id="container">
 
-<header>
-  <div xlu-include-file="header.html"></div> <!-- Aquí se cargará header.html -->
-</header>
+<div id="header">
 
-<img src="../img/fachada-de-colegio-confucio.gif" alt="Descripción de la imagen" class="image">
+</div>
 
-<main class="content"></main>
+</div>
+
+<!--img src="../img/fachada-de-colegio-confucio.gif" alt="Descripción de la imagen" class="image"-->
+
+<div id="container2">
+
+  <!-- Begin #container3 keeps the left col and body positioned-->
+  <div id="container3">
+
+    <!-- Begin #content -->
+    <div id="content">
+
+    </div><!-- //content -->
+
+    <!-- #left sidebar -->
+    <div id="sidebarLT">
+
+      <div id="articles">
+
+      </div>
+
+      <div id="categories">
+
+      </div>
+
+      <div id="links">
+
+      </div>
+
+
+    </div>
+  </div><!--//container3-->
+
+  <!-- #right sidebar -->
+  <div id="sidebarRT">
+
+
+    <div id="users">
+      <template id="user-card-template">
+        <div class="user">
+          <div class="profile">
+
+            <h2></h2>
+            <span class="title"></span>
+
+          </div>
+
+
+        </div>
+      </template>
+    </div>
+
+
+  </div><!--//sidebarRT -->
+
+  <div id="pushbottom"></div>
+  <!--
+  this div will span across the 3 divs above it making sure the footer
+  stays at the bottom of the longest column
+  -->
+
+</div>
 
 <footer>
   <div xlu-include-file="footer.html"></div> <!-- Aquí se cargará footer.html -->
 </footer>
 
-<script src="../js/includefile.js"></script> <!-- Cargar el script externo -->
 <script>
-  xLuIncludeFile(); // Ejecutar la función después de cargar el script
+  document.addEventListener('DOMContentLoaded', init);
 
-  // Cargar el contenido de header.html dinámicamente en el contenedor
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header-container").innerHTML = data;
-    })
-    .catch(error => console.error('Error al cargar header.html:', error));
-
-  // Mostrar el mensaje de bienvenida si el nombre está presente
-  const urlParams = new URLSearchParams(window.location.search);
-  const userName = urlParams.get('user');
-  if (userName) {
-    document.getElementById("message-text").textContent = `✅ Sesión iniciada a nombre de ${userName}`;
+  const supportsTemplate = function () {
+    //create a template element and make sure it has a 'content' property
+    return 'content' in document.createElement('template');
   }
+
+  function loadTemplate(fileName, id, callback) {
+
+    fetch(fileName).then((res) => {
+      return res.text();
+    }).then((text) => {
+      document.getElementById(id).innerHTML = text;
+      //console.log(text)
+
+      if(callback){
+        callback();
+      }
+    })
+  }
+
+  function init() {
+
+    loadTemplate('./header.html', 'header');
+
+    addSideBarContent();
+
+  }
+
+  function addSideBarContent() {
+
+    fetch('imagen.json')
+            .then((response) => {
+              return response.json();
+            })
+            .then((imagen) => {
+              if ('content' in document.createElement('template')) {
+                const container = document.getElementById('imagen');
+
+                imagen.forEach((image) => {
+
+                  const tmpl = document
+                          .getElementById('user-card-template')
+                          .content.cloneNode(true);
+
+                  tmpl.querySelector('image').innerText = image.direccion;
+
+
+                  container.appendChild(tmpl);
+                });
+              } else {
+                console.error('Your browser does not support templates');
+              }
+            })
+            .catch((err) => console.error(err));
+
+
+  }
+
+  function addPostContent() {
+    if (supportsTemplate()) {
+      //We can use the template element in our HTML
+      console.log('Templates are supported.');
+
+      document.getElementById('post_1').remove();
+      document.getElementById('post_2').remove();
+
+      let temp = document.getElementById('post_content_template');
+      let content = temp.content;
+      console.log(content);
+      let target = document.getElementById('post_template');
+      target.appendChild(content.cloneNode(true))
+      target.appendChild(content.cloneNode(true));
+
+    } else {
+
+      //Use another method, like manually building the elements.
+      console.log('The else is running');
+
+      fetch('./post_content_support.html').then((res) => {
+        return res.text();
+      }).then((text) => {
+        document.getElementById('post_1').innerHTML = text;
+        document.getElementById('post_2').innerHTML = text;
+
+        console.log(text)
+      })
+
+    }
+
+
+  }
+
 </script>
 
 </body>
