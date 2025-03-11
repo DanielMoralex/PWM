@@ -88,9 +88,7 @@
 
 </div>
 
-<footer>
-  <div xlu-include-file="footer.html"></div> <!-- Aquí se cargará footer.html -->
-</footer>
+<div id="footer">
 
 <script>
   document.addEventListener('DOMContentLoaded', init);
@@ -117,6 +115,7 @@
   function init() {
 
     loadTemplate('./header.html', 'header');
+    loadTemplate('./footer.html', 'footer');
 
     cargarImagenFachada();
 
@@ -149,8 +148,6 @@
             })
             .catch(error => console.error("Error al cargar la imagen:", error));
   }
-
-  document.addEventListener("DOMContentLoaded", cargarImagenFachada);
 
   function addSideBarContent() {
     fetch('/json/imagen.json')
