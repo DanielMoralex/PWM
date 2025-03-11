@@ -1,6 +1,12 @@
-{
-  "id": 1,
-  "name": "Foto del colegio",
-  "direccion": "../img/fachada-de-colegio-confucio.gif",
-  "alt": "Descripción de la imagen"
-}
+[
+  {
+    "id": 1,
+    "name": "Foto del colegio",
+    "direccion": "../img/fachada-de-colegio-confucio.gif"
+  },
+  {
+    "id": 2,
+    "name": "Foto de noticias",
+    "direccion": "../img/fotoRobotica.jpg"
+  }
+]
