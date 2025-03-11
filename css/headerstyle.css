@@ -3,6 +3,7 @@ html, body {
   font-family: Arial, sans-serif;
   overflow-x: hidden; /* Oculta el desplazamiento horizontal */
   width: 100vw; /* Asegura que el ancho del body sea igual al viewport */
+  border-bottom: #48b897 solid 2px;
 }
 
 header {
