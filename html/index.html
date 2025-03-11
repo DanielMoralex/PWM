@@ -26,7 +26,7 @@
 
 </div>
 
-<!--img src="../img/fachada-de-colegio-confucio.gif" alt="Descripción de la imagen" class="image"-->
+<img src="" alt="Descripción de la imagen" class="image">
 
 <div id="container2">
 
@@ -118,9 +118,39 @@
 
     loadTemplate('./header.html', 'header');
 
-    addSideBarContent();
+    cargarImagenFachada();
 
   }
+
+  function cargarImagenFachada() {
+    fetch("/json/imagen.json")
+            .then(response => {
+              if (!response.ok) {
+                throw new Error("No se pudo cargar el archivo JSON");
+              }
+              return response.json();
+            })
+            .then(data => {
+              console.log("Datos recibidos del JSON:", data); // Para depuración
+
+              if (data.direccion) {
+                const imgElement = document.querySelector(".image");
+                if (!imgElement) {
+                  console.error("No se encontró el elemento <img> con la clase 'image'");
+                  return;
+                }
+
+                imgElement.setAttribute("src", data.direccion);
+                imgElement.classList.add("fachada-colegio");
+                console.log("Imagen actualizada con src:", data.direccion);
+              } else {
+                console.error("El JSON no tiene la clave 'direccion'");
+              }
+            })
+            .catch(error => console.error("Error al cargar la imagen:", error));
+  }
+
+  document.addEventListener("DOMContentLoaded", cargarImagenFachada);
 
   function addSideBarContent() {
     fetch('/json/imagen.json')
