@@ -11,13 +11,16 @@
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/noticias.css">
 </head>
+
 <body>
-<header>
-    <div xlu-include-file="header.html"></div>
-</header>
+
+<div id="header">
+
+</div>
+
 <div class="main-content">
     <div class="image-section">
-        <img src="../img/fotoRobotica.jpg" alt="Imagen de ejemplo">
+        <img src="" alt="Imagen de ejemplo" class="image">
     </div>
     <div class="news-section">
         <h2>Últimas Noticias</h2>
@@ -26,12 +29,88 @@
         <p>Programa de Reciclaje Escolar: El colegio lanza una campaña de reciclaje para fomentar el cuidado del medio ambiente. Se colocarán nuevos contenedores para papel, plástico y pilas en las aulas y zonas comunes.</p>
     </div>
 </div>
-<footer>
-    <div xlu-include-file="footer.html"></div>
-</footer>
-<script src="../js/includefile.js"></script>
+
+<div id="footer"></div>
+
 <script>
-    xLuIncludeFile();
+    document.addEventListener('DOMContentLoaded', init);
+
+    function loadTemplate(fileName, id, callback) {
+
+        fetch(fileName).then((res) => {
+            return res.text();
+        }).then((text) => {
+            document.getElementById(id).innerHTML = text;
+            //console.log(text)
+
+            if(callback){
+                callback();
+            }
+        })
+    }
+
+    function init() {
+
+        loadTemplate('./header.html', 'header');
+        loadTemplate('./footer.html', 'footer');
+
+        cargarImagenes();
+
+    }
+
+    function cargarImagenes() {
+        fetch("/json/imagen.json")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("No se pudo cargar el archivo JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Datos recibidos del JSON:", data); // Para depuración
+
+                const imagenNoticia = data.find(img => img.id === 2);
+
+                if (imagenNoticia) {
+                    const imgElement = document.querySelector(".image");
+                    if (!imgElement) {
+                        console.error("No se encontró el elemento <img> con la clase 'image'");
+                        return;
+                    }
+
+                    imgElement.setAttribute("src", imagenNoticia.direccion);
+                    imgElement.classList.add("fachada-colegio");
+                    console.log("Imagen actualizada con src:", imagenNoticia.direccion);
+                } else {
+                    console.error("El JSON no tiene la clave 'direccion'");
+                }
+            })
+            .catch(error => console.error("Error al cargar la imagen:", error));
+    }
+
+    function addSideBarContent() {
+        fetch('/json/imagen.json')
+            .then((response) => response.json())
+            .then((imagen) => {
+                if ('content' in document.createElement('template')) {
+                    const container = document.getElementById('imagen');
+
+                    imagen.forEach((image) => {
+                        const tmpl = document
+                            .getElementById('user-card-template')
+                            .content.cloneNode(true);
+
+                        // Asegúrate de que el template tiene un <img> y no <image>
+                        tmpl.querySelector('img').src = image.direccion; // Usamos src en lugar de innerText
+
+                        container.appendChild(tmpl);
+                    });
+                } else {
+                    console.error('Your browser does not support templates');
+                }
+            })
+            .catch((err) => console.error(err));
+    }
 </script>
 </body>
 </html>
