@@ -1,6 +1,7 @@
-{
-  "id": 1,
-  "name": "Foto del colegio",
-  "direccion": "../img/fachada-de-colegio-confucio.gif",
-
-}
+[
+  {
+    "id": 1,
+    "name": "Foto del colegio",
+    "direccion": "./img/fachada-de-colegio-confucio.gif"
+  }
+]
