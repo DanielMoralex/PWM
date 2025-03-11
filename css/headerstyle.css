@@ -13,7 +13,7 @@ header {
   justify-content: space-between; /* Separa el título y los botones */
   align-items: center; /* Alinea los elementos verticalmente */
   padding-top: 30px;
-  padding-bottom: 40px;
+  padding-bottom: 75px;
   background-color: #81D2D0;
   border-bottom: 4px solid #519897;
 }
@@ -23,6 +23,7 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   font-size: 3.5rem;
+  color: #222222;
 }
 
 .buttons {
@@ -34,15 +35,17 @@ h1 {
 
 .buttons a {
   text-decoration: none;
-  color: black;
-  background-color: #93DEDD;
+  color: #222222;
+  background-color: #ADE1E5;
   padding: 10px 15px;
   border-radius: 20px;
+  font-size: 20px;
   transition: background 0.3s;
+  border: 1.5px solid #48b897;
 }
 
 .buttons a:hover {
-  background-color: #ADE1E5;
+  background-color: #E0F7FA;
 }
 
 nav {
@@ -60,11 +63,13 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: black;
+  color: #222222;
   font-size: 20px;
   padding: 10px 15px;
   border-radius: 10px;
+  background-color: #ADE1E5;
   transition: background 0.3s;
+  border: 1.5px solid #48b897;
 }
 
 nav ul li a:hover {
