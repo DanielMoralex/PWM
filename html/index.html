@@ -68,6 +68,7 @@
 
             <h2></h2>
             <span class="title"></span>
+            <img alt="Imagen del colegio" />
 
           </div>
 
@@ -76,7 +77,7 @@
       </template>
     </div>
 
-
+    <div id="imagen"></div>
   </div><!--//sidebarRT -->
 
   <div id="pushbottom"></div>
@@ -87,9 +88,7 @@
 
 </div>
 
-<footer>
-  <div xlu-include-file="footer.html"></div> <!-- Aquí se cargará footer.html -->
-</footer>
+<div id="footer">
 
 <script>
   document.addEventListener('DOMContentLoaded', init);
@@ -116,6 +115,7 @@
   function init() {
 
     loadTemplate('./header.html', 'header');
+    loadTemplate('./footer.html', 'footer');
 
     cargarImagenFachada();
 
@@ -150,23 +150,19 @@
   }
 
   function addSideBarContent() {
-
-    fetch('imagen.json')
-            .then((response) => {
-              return response.json();
-            })
+    fetch('/json/imagen.json')
+            .then((response) => response.json())
             .then((imagen) => {
               if ('content' in document.createElement('template')) {
                 const container = document.getElementById('imagen');
 
                 imagen.forEach((image) => {
-
                   const tmpl = document
                           .getElementById('user-card-template')
                           .content.cloneNode(true);
 
-                  tmpl.querySelector('image').innerText = image.direccion;
-
+                  // Asegúrate de que el template tiene un <img> y no <image>
+                  tmpl.querySelector('img').src = image.direccion; // Usamos src en lugar de innerText
 
                   container.appendChild(tmpl);
                 });
@@ -175,9 +171,8 @@
               }
             })
             .catch((err) => console.error(err));
-
-
   }
+
 
   function addPostContent() {
     if (supportsTemplate()) {
