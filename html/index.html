@@ -111,11 +111,11 @@
     loadTemplate('./header.html', 'header');
     loadTemplate('./footer.html', 'footer');
 
-    cargarImagenFachada();
+    cargarImagenes();
 
   }
 
-  function cargarImagenFachada() {
+  function cargarImagenes() {
     fetch("/json/imagen.json")
             .then(response => {
               if (!response.ok) {
@@ -126,15 +126,17 @@
             .then(data => {
               console.log("Datos recibidos del JSON:", data); // Para depuración
 
-              if (data.direccion) {
+              const imagenFachada = data.find(img => img.id === 1);
+
+              if (imagenFachada) {
                 const imgElement = document.querySelector(".image");
                 if (!imgElement) {
                   console.error("No se encontró el elemento <img alt=\"\" class=\"image\" src=\"\"> con la clase 'image'");
                   return;
                 }
 
-                imgElement.setAttribute("src", data.direccion);
-                imgElement.setAttribute("alt", data.alt);
+                imgElement.setAttribute("src", imagenFachada.direccion);
+                imgElement.setAttribute("alt", imagenFachada.alt);
                 imgElement.classList.add("fachada-colegio");
                 console.log("Imagen actualizada con src:", data.direccion);
               } else {
