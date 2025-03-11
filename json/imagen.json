@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [
   {
     "id": 1,
@@ -11,11 +10,3 @@
     "direccion": "../img/fotoRobotica.jpg"
   }
 ]
-=======
-{
-  "id": 1,
-  "name": "Foto del colegio",
-  "direccion": "../img/fachada-de-colegio-confucio.gif",
-  "alt": "Descripción de la imagen"
-}
->>>>>>> 6d06c22529f9a524917405fa9a5d479fc68cb0c3
