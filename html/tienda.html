@@ -17,9 +17,7 @@
 
 <body>
 
-<div id="header">
-
-</div>
+<div id="header"></div>
 
 <main class="contenedor">
   <!-- Imagen izquierda -->
@@ -67,6 +65,38 @@
 
       loadTemplate('./header.html', 'header');
       loadTemplate('./footer.html', 'footer');
+
+    }
+
+    function cargarImagenes() {
+      fetch("/json/imagen.json")
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error("No se pudo cargar el archivo JSON");
+                }
+                return response.json();
+              })
+              .then(data => {
+                console.log("Datos recibidos del JSON:", data);
+
+                const imagenFachada = data.find(img => img.id === 1);
+
+                if (imagenFachada) {
+                  const imgElement = document.querySelector(".image");
+                  if (!imgElement) {
+                    console.error("No se encontró el elemento <img alt=\"\" class=\"image\" src=\"\"> con la clase 'image'");
+                    return;
+                  }
+
+                  imgElement.setAttribute("src", imagenFachada.direccion);
+                  imgElement.setAttribute("alt", imagenFachada.alt);
+                  imgElement.classList.add("fachada-colegio");
+                  console.log("Imagen actualizada con src:", data.direccion);
+                } else {
+                  console.error("El JSON no tiene la clave 'direccion'");
+                }
+              })
+              .catch(error => console.error("Error al cargar la imagen:", error));
     }
   </script>
 
