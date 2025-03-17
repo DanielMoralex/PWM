@@ -8,5 +8,35 @@
     "id": 2,
     "name": "Foto de noticias",
     "direccion": "../img/fotoRobotica.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Foto horario alumno",
+    "direccion": "../img/horario_alumnos.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Foto horario profesor",
+    "direccion": "../img/horario_profesor.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Foto chandal",
+    "direccion": "../img/chandal.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Foto camiseta",
+    "direccion": "../img/chandal.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Logo colegio",
+    "direccion": "../img/deepseek-ai-ico-seeklogo.png"
+  },
+  {
+    "id": 8,
+    "name": "Foto Usuario",
+    "direccion": "../img/PerfilUsuario.png"
   }
 ]
