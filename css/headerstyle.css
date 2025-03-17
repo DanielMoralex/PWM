@@ -3,6 +3,7 @@ html, body {
   font-family: Arial, sans-serif;
   overflow-x: hidden; /* Oculta el desplazamiento horizontal */
   width: 100vw; /* Asegura que el ancho del body sea igual al viewport */
+  border-bottom: #48b897 solid 2px;
 }
 
 header {
@@ -23,7 +24,7 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   font-size: 3.5rem;
-  color: #222222;
+  color: #222333;
 }
 
 .buttons {
@@ -35,7 +36,7 @@ h1 {
 
 .buttons a {
   text-decoration: none;
-  color: #222222;
+  color: #222333;
   background-color: #ADE1E5;
   padding: 10px 15px;
   border-radius: 23px;
@@ -63,10 +64,10 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #222222;
+  color: #222333;
   font-size: 20px;
   padding: 10px 15px;
-  border-radius: 10px;
+  border-radius: 14px;
   background-color: #ADE1E5;
   transition: background 0.3s;
   border: 1.5px solid #48b897;

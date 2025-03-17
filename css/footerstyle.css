@@ -13,13 +13,14 @@ main {
 footer {
   display: flex;
   background-color: #5ad7ac;
-  color: white;
+  color: #222333;
   text-align: center;
   padding: 15px;
   width: 100vw;
   justify-content: space-between;
   margin-top: auto;
   margin-bottom: 0;
+  border-top: #48b897 solid 4px;
 }
 
 .social-icons {
