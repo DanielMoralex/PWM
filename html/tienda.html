@@ -22,7 +22,7 @@
 <main class="contenedor">
   <!-- Imagen izquierda -->
   <section class="imagen-izquierda">
-    <img src="../img/chandal.jpg" alt="Imagen Izquierda">
+    <img src="" alt="Imagen Izquierda">
     <div class="boton1">
       <button onclick="location.href='https://hipertextilcavero.com/hijas-de-la-caridad-vicencianos/1107-chandal-hijas-de-la-caridad-vicencianos.html'">Comprar</button>
     </div>
@@ -30,7 +30,7 @@
 
   <!-- Imagen central con dos botones debajo -->
   <section class="imagen-central">
-    <img src="../img/camisetaMC.jpg" alt="Imagen Central">
+    <img src="" alt="Imagen Central">
     <div class="boton2">
       <button onclick="location.href='https://hipertextilcavero.com/hijas-de-la-caridad-vicencianos/2556-camiseta-manga-corta-hijas-de-la-caridad-vicencianos-bordada.html'">Comprar</button>
     </div>
@@ -66,6 +66,8 @@
       loadTemplate('./header.html', 'header');
       loadTemplate('./footer.html', 'footer');
 
+      cargarImagenes();
+
     }
 
     function cargarImagenes() {
@@ -79,24 +81,39 @@
               .then(data => {
                 console.log("Datos recibidos del JSON:", data);
 
-                const imagenFachada = data.find(img => img.id === 1);
+                const imagenIzquierda = data.find(img => img.id === 5);
 
-                if (imagenFachada) {
+                if (imagenIzquierda) {
                   const imgElement = document.querySelector(".image");
                   if (!imgElement) {
                     console.error("No se encontró el elemento <img alt=\"\" class=\"image\" src=\"\"> con la clase 'image'");
                     return;
                   }
 
-                  imgElement.setAttribute("src", imagenFachada.direccion);
-                  imgElement.setAttribute("alt", imagenFachada.alt);
-                  imgElement.classList.add("fachada-colegio");
+                  imgElement.setAttribute("src", imagenIzquierda.direccion);
                   console.log("Imagen actualizada con src:", data.direccion);
                 } else {
                   console.error("El JSON no tiene la clave 'direccion'");
                 }
               })
               .catch(error => console.error("Error al cargar la imagen:", error));
+
+              const imagenCentral = data.find(img => img.id === 6);
+
+              if (imagenCentral) {
+                const imgElement = document.querySelector(".image");
+                if (!imgElement) {
+                  console.error("No se encontró el elemento <img alt=\"\" class=\"image\" src=\"\"> con la clase 'image'");
+                  return;
+                }
+
+                imgElement.setAttribute("src", imagenCentral.direccion);
+                console.log("Imagen actualizada con src:", data.direccion);
+      } else {
+        console.error("El JSON no tiene la clave 'direccion'");
+      }
+    })
+    .catch(error => console.error("Error al cargar la imagen:", error));
     }
   </script>
 
