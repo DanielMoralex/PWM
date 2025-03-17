@@ -9,7 +9,8 @@
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #f9f9f9; /* Color de fondo opcional */
+  border: 1px solid lightgray;
+  background-color: #f4f4f4; /* Color de fondo opcional */
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -26,16 +27,16 @@
   width: 100%;
   padding: 8px;
   margin-top: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #999999;
   border-radius: 5px;
 }
 
 .login-form button {
   margin-top: 40px;
-  background-color: #81D2D0;
+  background-color: #a9e6ec;
   margin-bottom: 10px;
-  color: white;
-  border: none;
+  color: #222222;
+  border: 1px solid #222222;
   cursor: pointer;
   font-size: 16px;
 }
