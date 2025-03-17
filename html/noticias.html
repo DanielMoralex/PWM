@@ -22,7 +22,7 @@
     <div class="image-section">
         <img src="" alt="Imagen de ejemplo" class="image">
     </div>
-    <div id="sidebar">
+    <div id="noticias-section">
         <!-- El contenido del sidebar se insertará aquí -->
     </div>
 </div>
@@ -95,7 +95,7 @@
                 return response.json();
             })
             .then(noticias => {
-                const sidebar = document.getElementById('sidebar');
+                const sidebar = document.getElementById('noticias-section');
                 if (!sidebar) {
                     console.error("No se encontró el contenedor del sidebar");
                     return;
@@ -106,7 +106,7 @@
 
                 noticias.forEach(noticia => {
                     const noticiaDiv = document.createElement('div');
-                    noticiaDiv.classList.add('sidebar-noticia');
+                    noticiaDiv.classList.add('noticias-section');
 
                     const titulo = document.createElement('h3');
                     titulo.textContent = noticia.title;

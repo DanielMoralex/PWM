@@ -2,7 +2,8 @@
 .main-content {
     display: flex; /* Usamos Flexbox para alinear la imagen y el bloque de noticias */
     justify-content: space-between; /* Espacio entre la imagen y las noticias */
-    padding: 20px;
+    padding: 30px;
+    gap: 15px;
 }
 
 /* Estilo para la sección de la imagen */
@@ -18,10 +19,10 @@
 
 /* Estilo para la sección de noticias */
 .sidebar-noticia {
-    width: 50%; /* Asigna un 50% de ancho al bloque de noticias */
-    background-color: #f4f4f4; /* Fondo gris claro */
-    padding: 20px; /* Espaciado interior */
-    border-radius: 10px; /* Bordes redondeados */
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 /* Estilo para los títulos de las noticias */
@@ -36,4 +37,8 @@
     color: #555; /* Color de texto */
     font-size: 20px;
     line-height: 1.6;
+}
+
+#noticias-section {
+    width: 50%;
 }
