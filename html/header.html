@@ -1,5 +1,5 @@
 <header>
-  <img src="/img/deepseek-ai-icon-seeklogo.png" class="logo">
+  <img src="" alt="" class="logo">
   <h1>CEIP Diez de Octubre</h1>
   <div class="buttons">
     <a href="cuestionario_ini.html">Inicio</a>
@@ -12,6 +12,58 @@
     </ul>
   </nav>
 
+<script>
+  document.addEventListener('DOMContentLoaded', init);
+
+  function loadTemplate(fileName, id, callback) {
+
+    fetch(fileName).then((res) => {
+      return res.text();
+    }).then((text) => {
+      document.getElementById(id).innerHTML = text;
+      //console.log(text)
+
+      if(callback){
+        callback();
+      }
+    })
+  }
+
+  function init() {
+    cargarImagenes();
+  }
+
+  function cargarImagenes() {
+    fetch("/json/imagen.json")
+            .then(response => {
+              if (!response.ok) {
+                throw new Error("No se pudo cargar el archivo JSON");
+              }
+              return response.json();
+            })
+            .then(data => {
+              console.log("Datos recibidos del JSON:", data); // Para depuración
+
+              const imagenFachada = data.find(img => img.id === 7);
+
+              if (imagenFachada) {
+                const imgElement = document.querySelector(".image");
+                if (!imgElement) {
+                  console.error("No se encontró el elemento <img alt=\"\" class=\"image\" src=\"\"> con la clase 'image'");
+                  return;
+                }
+
+                imgElement.setAttribute("src", imagenFachada.direccion);
+                imgElement.setAttribute("alt", imagenFachada.alt);
+                imgElement.classList.add("fachada-colegio");
+                console.log("Imagen actualizada con src:", data.direccion);
+              } else {
+                console.error("El JSON no tiene la clave 'direccion'");
+              }
+            })
+            .catch(error => console.error("Error al cargar la imagen:", error));
+  }
+</script>
 
 <script>
   window.addEventListener('load', function() {
