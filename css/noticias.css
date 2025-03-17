@@ -18,24 +18,24 @@
 }
 
 /* Estilo para la sección de noticias */
-.sidebar-noticia {
-    width: 100%;
+.noticias-section {
+    width: 95%;
     background-color: #f4f4f4;
     padding: 20px;
     border-radius: 10px;
 }
 
 /* Estilo para los títulos de las noticias */
-.sidebar-noticia h3 {
+.noticias-section h2 {
     margin-bottom: 15px;
     color: #333; /* Color de texto */
 }
 
 /* Estilo para los párrafos de noticias */
-.sidebar-noticia p {
-    margin-bottom: 10px;
+.noticias-section p {
+    margin-bottom: 21px;
     color: #555; /* Color de texto */
-    font-size: 20px;
+    font-size: 21px;
     line-height: 1.6;
 }
 
