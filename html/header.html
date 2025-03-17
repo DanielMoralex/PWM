@@ -1,5 +1,5 @@
 <header>
-  <img src="" alt="" class="logo">
+  <img src="../img/deepseek-ai-icon-seeklogo.png" alt="" class="logo">
   <h1>CEIP Diez de Octubre</h1>
   <div class="buttons">
     <a href="cuestionario_ini.html">Inicio</a>
@@ -11,99 +11,4 @@
       <li><a href="tienda.html">Tienda</a></li>
     </ul>
   </nav>
-
-<script>
-  document.addEventListener('DOMContentLoaded', init);
-
-  function loadTemplate(fileName, id, callback) {
-
-    fetch(fileName).then((res) => {
-      return res.text();
-    }).then((text) => {
-      document.getElementById(id).innerHTML = text;
-      //console.log(text)
-
-      if(callback){
-        callback();
-      }
-    })
-  }
-
-  function init() {
-    cargarImagenes();
-  }
-
-  function cargarImagenes() {
-    fetch("/json/imagen.json")
-            .then(response => {
-              if (!response.ok) {
-                throw new Error("No se pudo cargar el archivo JSON");
-              }
-              return response.json();
-            })
-            .then(data => {
-              console.log("Datos recibidos del JSON:", data); // Para depuración
-
-              const imagenFachada = data.find(img => img.id === 7);
-
-              if (imagenFachada) {
-                const imgElement = document.querySelector(".image");
-                if (!imgElement) {
-                  console.error("No se encontró el elemento <img alt=\"\" class=\"image\" src=\"\"> con la clase 'image'");
-                  return;
-                }
-
-                imgElement.setAttribute("src", imagenFachada.direccion);
-                imgElement.setAttribute("alt", imagenFachada.alt);
-                imgElement.classList.add("fachada-colegio");
-                console.log("Imagen actualizada con src:", data.direccion);
-              } else {
-                console.error("El JSON no tiene la clave 'direccion'");
-              }
-            })
-            .catch(error => console.error("Error al cargar la imagen:", error));
-  }
-</script>
-
-<script>
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      const miPaginaBtn = document.getElementById("miPaginaBtn");
-
-      if (!miPaginaBtn) {
-        console.error("No se encontró el botón Mi Página");
-        return;
-      }
-
-      miPaginaBtn.addEventListener("click", function(event) {
-        event.preventDefault(); // Evitar la acción predeterminada del enlace
-        console.log("Botón Mi Página clickeado");
-
-        // Comprobamos si la sesión está iniciada y el rol del usuario
-        const session = localStorage.getItem('session'); // Suponiendo que guardas el estado de la sesión en localStorage
-        console.log("Session: ", session);
-
-        if (session) {
-          const userRole = localStorage.getItem('userRole'); // Rol del usuario (profesor o alumno)
-          console.log("User Role: ", userRole);
-
-          if (userRole === 'profesor') {
-            console.log("Redirigiendo al perfil de profesor");
-            window.location.href = 'perfil_profesor.html'; // Redirigir al perfil de profesor
-          } else if (userRole === 'alumno') {
-            console.log("Redirigiendo al perfil de alumno");
-            window.location.href = 'perfil_alumno.html'; // Redirigir al perfil de alumno
-          } else {
-            console.log("❌ Rol de usuario desconocido.");
-            alert("❌ Rol de usuario desconocido.");
-          }
-        } else {
-          console.log("No hay sesión activa. Redirigiendo al inicio.");
-          window.location.href = 'cuestionario_ini.html'; // Redirigir si no hay sesión
-        }
-      });
-    }, 100); // Esperar 100ms antes de ejecutar el código
-  });
-</script>
-
 </header>

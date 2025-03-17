@@ -31,11 +31,6 @@
   },
   {
     "id": 7,
-    "name": "Logo colegio",
-    "direccion": "../img/deepseek-ai-ico-seeklogo.png"
-  },
-  {
-    "id": 8,
     "name": "Foto Usuario",
     "direccion": "../img/PerfilUsuario.png"
   }
