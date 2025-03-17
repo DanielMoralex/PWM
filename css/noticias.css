@@ -7,7 +7,7 @@
 
 /* Estilo para la sección de la imagen */
 .image-section {
-    width: 45%; /* Asigna un 45% de ancho a la imagen */
+    width: 50%; /* Asigna un 45% de ancho a la imagen */
 }
 
 .image-section img {
@@ -17,7 +17,7 @@
 }
 
 /* Estilo para la sección de noticias */
-.news-section {
+.sidebar-noticia {
     width: 50%; /* Asigna un 50% de ancho al bloque de noticias */
     background-color: #f4f4f4; /* Fondo gris claro */
     padding: 20px; /* Espaciado interior */
@@ -25,15 +25,15 @@
 }
 
 /* Estilo para los títulos de las noticias */
-.news-section h2 {
+.sidebar-noticia h3 {
     margin-bottom: 15px;
     color: #333; /* Color de texto */
 }
 
 /* Estilo para los párrafos de noticias */
-.news-section p {
+.sidebar-noticia p {
     margin-bottom: 10px;
     color: #555; /* Color de texto */
-    font-size: 1.5rem;
+    font-size: 20px;
     line-height: 1.6;
 }
