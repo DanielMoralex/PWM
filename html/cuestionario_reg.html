@@ -17,9 +17,7 @@
 
 <body>
 
-<header>
-  <div xlu-include-file="header.html"></div> <!-- Aquí se cargará header.html -->
-</header>
+<div id="header"></div>
 
 <main class="profile-container">
   <form class="registration-form" action="" method="POST">
@@ -48,13 +46,62 @@
     <button type="submit">Registrarse</button>
   </form>
 
-  <footer>
-    <div xlu-include-file="footer.html"></div> <!-- Aquí se cargará header.html -->
-  </footer>
-
-  <script src="../js/includefile.js"></script> <!-- Cargar el script externo -->
   <script>
-    xLuIncludeFile(); // Ejecutar la función después de cargar el script
+    document.querySelector(".registration-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nifInput = document.getElementById("nif").value.trim();
+      const phoneInput = document.getElementById("phone").value.trim();
+
+      const nifPattern = /^\d{7,8}$/; // Solo 7 u 8 dígitos sin letras
+      const phonePattern = /^\d{9,15}$/; // Solo números (mínimo 9, máximo 15)
+
+      if (!nifPattern.test(nifInput)) {
+        alert("❌ El NIF/NIE debe contener solo números (7 u 8 dígitos) y sin letras.");
+        return; // Detiene el proceso
+      }
+
+      if (!phonePattern.test(phoneInput)) {
+        alert("❌ El teléfono debe contener solo números (mínimo 9) y sin espacios.");
+        return; // Detiene el proceso
+      }
+
+      // Si los datos son correctos, se guardan en localStorage
+      const formData = new FormData(event.target);
+      const jsonData = Object.fromEntries(formData);
+
+      localStorage.setItem("perfil", JSON.stringify(jsonData));
+
+      alert("✅ Registro guardado en el navegador.");
+      window.location.href = "cuestionario_ini.html?user="
+      alert("Procede al Inicio de Sesión.")
+    });
+  </script>
+</main>
+
+  <div id="footer"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', init);
+
+    function loadTemplate(fileName, id, callback) {
+
+      fetch(fileName).then((res) => {
+        return res.text();
+      }).then((text) => {
+        document.getElementById(id).innerHTML = text;
+        //console.log(text)
+
+        if(callback){
+          callback();
+        }
+      })
+    }
+
+    function init() {
+      loadTemplate('./header.html', 'header');
+      loadTemplate('./footer.html', 'footer');
+    }
   </script>
 
   <script>
@@ -88,10 +135,5 @@
       alert("Procede al Inicio de Sesión.")
     });
   </script>
-
-
-</main>
-
 </body>
-
 </html>
