@@ -56,9 +56,9 @@ nav {
 }
 
 nav ul {
-  list-style: none; /* Elimina los puntos de la lista */
-  display: flex; /* Poner los elementos en línea */
-  gap: 50px; /* Espaciado entre elementos */
+  list-style: none;
+  display: flex;
+  gap: 50px;
   padding: 0;
 }
 
@@ -74,11 +74,57 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #E0F7FA; /* Cambia este color si prefieres otro */
+  background-color: #E0F7FA;
 }
 
 .logo {
   display: block;
   margin-top: 5px;
   margin-left: 50px;
+}
+
+@media (max-width: 800px) {
+  .buttons {
+    display: none;
+  }
+
+  h1 {
+    left: 60%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+  }
+
+  nav {
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    transform: translateX(-50%);
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .buttons {
+    display: none;
+  }
+
+  h1 {
+    left: 70%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+  }
+
+  nav {
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    transform: translateX(-50%);
+  }
+
+  nav ul {
+    gap: 20px;
+  }
 }
