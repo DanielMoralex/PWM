@@ -22,23 +22,23 @@
 <main class="contenedor">
   <!-- Imagen izquierda -->
   <section class="imagen-izquierda">
-    <img src="" alt="Imagen Izquierda">
+    <img src="" alt="Imagen Izquierda" class="chandal">
     <div class="boton1">
-      <button onclick="location.href='https://hipertextilcavero.com/hijas-de-la-caridad-vicencianos/1107-chandal-hijas-de-la-caridad-vicencianos.html'">Comprar</button>
+      <button> Comprar </button>
     </div>
   </section>
 
   <!-- Imagen central con dos botones debajo -->
   <section class="imagen-central">
-    <img src="" alt="Imagen Central">
+    <img src="" alt="Imagen Central" class="camiseta">
     <div class="boton2">
-      <button onclick="location.href='https://hipertextilcavero.com/hijas-de-la-caridad-vicencianos/2556-camiseta-manga-corta-hijas-de-la-caridad-vicencianos-bordada.html'">Comprar</button>
+      <button> Comprar </button>
     </div>
   </section>
 
   <!-- Botón derecha -->
   <section class="boton-derecha">
-    <boton-derecha onclick="location.href='https://hipertextilcavero.com/329-sagrado-corazon-de-arnedo-la-rioja'">Más Productos</boton-derecha>
+    <button> Más Productos </button>
   </section>
 </main>
 
@@ -67,6 +67,7 @@
       loadTemplate('./footer.html', 'footer');
 
       cargarImagenes();
+      cargarEnlaces();
 
     }
 
@@ -84,9 +85,9 @@
                 const imagenIzquierda = data.find(img => img.id === 5);
 
                 if (imagenIzquierda) {
-                  const imgElement = document.querySelector(".image");
+                  const imgElement = document.querySelector(".chandal");
                   if (!imgElement) {
-                    console.error("No se encontró el elemento <img alt=\"\" class=\"image\" src=\"\"> con la clase 'image'");
+                    console.error("No se encontró el elemento <img alt=\"\" class=\"chandal\" src=\"\"> con la clase 'image'");
                     return;
                   }
 
@@ -95,25 +96,80 @@
                 } else {
                   console.error("El JSON no tiene la clave 'direccion'");
                 }
-              })
-              .catch(error => console.error("Error al cargar la imagen:", error));
 
               const imagenCentral = data.find(img => img.id === 6);
 
               if (imagenCentral) {
-                const imgElement = document.querySelector(".image");
+                const imgElement = document.querySelector(".camiseta");
                 if (!imgElement) {
-                  console.error("No se encontró el elemento <img alt=\"\" class=\"image\" src=\"\"> con la clase 'image'");
+                  console.error("No se encontró el elemento <img alt=\"\" class=\"camiseta\" src=\"\"> con la clase 'image'");
                   return;
                 }
 
                 imgElement.setAttribute("src", imagenCentral.direccion);
                 console.log("Imagen actualizada con src:", data.direccion);
-      } else {
-        console.error("El JSON no tiene la clave 'direccion'");
-      }
-    })
-    .catch(error => console.error("Error al cargar la imagen:", error));
+              } else {
+                console.error("El JSON no tiene la clave 'direccion'");
+              }
+          })
+          .catch(error => console.error("Error al cargar la imagen:", error));
+    }
+
+    function cargarEnlaces() {
+      fetch("/json/links.json")
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error("No se pudo cargar el archivo JSON de enlaces");
+                }
+                return response.json();
+              })
+              .then(data => {
+                console.log("Datos recibidos del JSON de enlaces:", data);
+
+                // Botón "Comprar Chandal"
+                const enlaceChandal = data.find(item => item.nombre === "Chandal");
+                if (enlaceChandal) {
+                  const botonChandal = document.querySelector(".boton1 button");
+                  if (botonChandal) {
+                    botonChandal.addEventListener("click", () => {
+                      window.location.href = enlaceChandal.url;
+                    });
+                    console.log("Botón Chandal actualizado:", enlaceChandal.url);
+                  } else {
+                    console.error("No se encontró el botón de Chandal");
+                  }
+                }
+
+                // Botón "Comprar Camiseta"
+                const enlaceCamiseta = data.find(item => item.nombre === "Camiseta");
+                if (enlaceCamiseta) {
+                  const botonCamiseta = document.querySelector(".boton2 button");
+                  if (botonCamiseta) {
+                    botonCamiseta.addEventListener("click", () => {
+                      window.location.href = enlaceCamiseta.url;
+                    });
+                    console.log("Botón Camiseta actualizado:", enlaceCamiseta.url);
+                  } else {
+                    console.error("No se encontró el botón de Camiseta");
+                  }
+                }
+
+                // Botón "Más Productos"
+                const enlaceTienda = data.find(item => item.nombre === "Tienda");
+                if (enlaceTienda) {
+                  const botonTienda = document.querySelector(".boton-derecha button");
+                  if (botonTienda) {
+                    botonTienda.addEventListener("click", () => {
+                      window.location.href = enlaceTienda.url;
+                    });
+                    console.log("Botón Tienda actualizado:", enlaceTienda.url);
+                  } else {
+                    console.error("No se encontró el botón de la Tienda");
+                  }
+                }
+
+              })
+              .catch(error => console.error("Error al cargar los enlaces:", error));
     }
   </script>
 
