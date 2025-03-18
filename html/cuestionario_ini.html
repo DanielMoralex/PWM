@@ -33,65 +33,63 @@
 
     <button type="submit">Ingresar</button>
   </form>
-
-  <div id="footer"></div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', init);
-
-    function loadTemplate(fileName, id, callback) {
-
-      fetch(fileName).then((res) => {
-        return res.text();
-      }).then((text) => {
-        document.getElementById(id).innerHTML = text;
-        //console.log(text)
-
-        if(callback){
-          callback();
-        }
-      })
-    }
-
-    function init() {
-      loadTemplate('./header.html', 'header');
-      loadTemplate('./footer.html', 'footer');
-    }
-  </script>
-
-  <script>
-    // Manejo del Inicio de Sesión
-    document.querySelector(".login-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const emailInput = document.getElementById("login-email").value.trim();
-      const passwordInput = document.getElementById("login-password").value.trim();
-
-      const storedProfile = JSON.parse(localStorage.getItem("perfil"));
-
-      if (!storedProfile) {
-        alert("❌ No hay usuarios registrados. Regístrate primero.");
-        return;
-      }
-
-      if (storedProfile.email === emailInput && storedProfile.password === passwordInput) {
-        alert("✅ Inicio de sesión exitoso.");
-
-        // Verificar el rol del usuario y redirigir
-        if (storedProfile.role === "profesor") {
-          alert("Se va a redirigir a su 'Mi Página'");
-          window.location.href = "perfil_profesor.html?user=" + encodeURIComponent(storedProfile.name);
-        } else {
-          window.location.href = "perfil_alumno.html?user=" + encodeURIComponent(storedProfile.name);
-        }
-
-      } else {
-        alert("❌ Correo o contraseña incorrectos.");
-      }
-    });
-  </script>
-
 </main>
 
+<div id="footer"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', init);
+
+  function loadTemplate(fileName, id, callback) {
+
+    fetch(fileName).then((res) => {
+      return res.text();
+    }).then((text) => {
+      document.getElementById(id).innerHTML = text;
+      //console.log(text)
+
+      if(callback){
+        callback();
+      }
+    })
+  }
+
+  function init() {
+    loadTemplate('./header.html', 'header');
+    loadTemplate('./footer.html', 'footer');
+  }
+</script>
+
+<script>
+  // Manejo del Inicio de Sesión
+  document.querySelector(".login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const emailInput = document.getElementById("login-email").value.trim();
+    const passwordInput = document.getElementById("login-password").value.trim();
+
+    const storedProfile = JSON.parse(localStorage.getItem("perfil"));
+
+    if (!storedProfile) {
+      alert("❌ No hay usuarios registrados. Regístrate primero.");
+      return;
+    }
+
+    if (storedProfile.email === emailInput && storedProfile.password === passwordInput) {
+      alert("✅ Inicio de sesión exitoso.");
+
+      // Verificar el rol del usuario y redirigir
+      if (storedProfile.role === "profesor") {
+        alert("Se va a redirigir a su 'Mi Página'");
+        window.location.href = "perfil_profesor.html?user=" + encodeURIComponent(storedProfile.name);
+      } else {
+        window.location.href = "perfil_alumno.html?user=" + encodeURIComponent(storedProfile.name);
+      }
+
+    } else {
+      alert("❌ Correo o contraseña incorrectos.");
+    }
+  });
+</script>
 </body>
 </html>

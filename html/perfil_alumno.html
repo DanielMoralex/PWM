@@ -15,9 +15,7 @@
 </head>
 <body>
 
-<header>
-  <div xlu-include-file="header.html"></div> <!-- Aquí se cargará header.html -->
-</header>
+<div id="header"></div>
 
 <div class="container">
   <div class="left-image">
@@ -33,14 +31,9 @@
   </div>
 </div>
 
-<footer>
-  <div xlu-include-file="footer.html"></div> <!-- Aquí se cargará header.html -->
-</footer>
+<div id="footer"></div>
 
-<script src="../js/includefile.js"></script> <!-- Cargar el script externo -->
 <script>
-  xLuIncludeFile(); // Ejecutar la función después de cargar el script
-
   // Intentar obtener los datos del usuario desde localStorage
   const userData = JSON.parse(localStorage.getItem("perfil"));
 
@@ -48,6 +41,29 @@
     document.getElementById("user-name").textContent = userData.name;
   } else {
     document.getElementById("user-name").textContent = "Usuario Desconocido";
+  }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', init);
+
+  function loadTemplate(fileName, id, callback) {
+
+    fetch(fileName).then((res) => {
+      return res.text();
+    }).then((text) => {
+      document.getElementById(id).innerHTML = text;
+      //console.log(text)
+
+      if(callback){
+        callback();
+      }
+    })
+  }
+
+  function init() {
+    loadTemplate('./header.html', 'header');
+    loadTemplate('./footer.html', 'footer');
   }
 </script>
 
