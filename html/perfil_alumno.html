@@ -19,13 +19,9 @@
 <div id="header"></div>
 
 <div class="container">
-  <div class="left-image">
-    <img src="../img/PerfilUsuario.png" alt="Imagen del Perfil">
-    <p id="user-name" class="user-name">Cargando usuario...</p>
-  </div>
-  <div class="center-image">
-    <img src="../img/horario_alumnos.png" alt="Imagen central">
-  </div>
+  <img src="" alt="Imagen del Perfil" class="left-image">
+  <p id="user-name" class="user-name">Cargando usuario...</p>
+  <img src="" alt="Imagen central" class="center-image">
   <div class="right-section">
     <h2>Notas</h2>
     <p class="Notas">Aquí puedes ver tus calificaciones.</p>
@@ -65,6 +61,84 @@
   function init() {
     loadTemplate('./header.html', 'header');
     loadTemplate('./footer.html', 'footer');
+
+    cargarImagenes();
+    cargarSidebar();
+  }
+
+  function cargarImagenes() {
+    fetch("/json/imagen.json")
+            .then(response => {
+              if (!response.ok) {
+                throw new Error("No se pudo cargar el archivo JSON");
+              }
+              return response.json();
+            })
+            .then(data => {
+              console.log("Datos recibidos del JSON:", data);
+
+              const imagenPerfil = data.find(img => img.id === 7);
+
+              if (imagenPerfil) {
+                const imgElement = document.querySelector(".left-image");
+                if (!imgElement) {
+                  console.error("No se encontró el elemento <img alt=\"\" class=\"left-image\" src=\"\"> con la clase 'image'");
+                  return;
+                }
+
+                imgElement.setAttribute("src", imagenPerfil.direccion);
+                console.log("Imagen actualizada con src:", imagenPerfil.direccion);
+              } else {
+                console.error("El JSON no tiene la clave 'direccion'");
+              }
+
+              const imagenHorario = data.find(img => img.id === 3);
+
+              if (imagenHorario) {
+                const imgElement = document.querySelector(".center-image");
+                if (!imgElement) {
+                  console.error("No se encontró el elemento <img alt=\"\" class=\"center-image\" src=\"\"> con la clase 'image'");
+                  return;
+                }
+
+                imgElement.setAttribute("src", imagenHorario.direccion);
+                console.log("Imagen actualizada con src:", imagenHorario.direccion);
+              } else {
+                console.error("El JSON no tiene la clave 'direccion'");
+              }
+            })
+            .catch(error => console.error("Error al cargar la imagen:", error));
+  }
+
+  function cargarSidebar() {
+    fetch("/json/notas.json")
+            .then(response => {
+              if (!response.ok) {
+                throw new Error("No se pudo cargar el archivo JSON de notas");
+              }
+              return response.json();
+            })
+            .then(notas => {
+              const sidebar = document.getElementById('right-section');
+              if (!sidebar) {
+                console.error("No se encontró el contenedor del sidebar");
+                return;
+              }
+
+              // Limpiar el contenido del sidebar antes de agregar los nuevos elementos
+              sidebar.innerHTML = '';
+
+              notas.forEach(nota => {
+                const asignatura = document.createElement('h3');
+                asignatura.textContent = nota.asignatura;
+
+                const calificacion = document.createElement('p');
+                calificacion.textContent = nota.calificacion;
+              });
+            })
+            .catch(error => {
+              console.error("Error al cargar el archivo JSON de noticias:", error);
+            });
   }
 </script>
 
