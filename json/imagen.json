@@ -12,12 +12,12 @@
   {
     "id": 3,
     "name": "Foto horario alumno",
-    "direccion": "../img/horario_alumnos.jpg"
+    "direccion": "../img/horario_alumnos.png"
   },
   {
     "id": 4,
     "name": "Foto horario profesor",
-    "direccion": "../img/horario_profesor.jpg"
+    "direccion": "../img/horario_profesor.png"
   },
   {
     "id": 5,
