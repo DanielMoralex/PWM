@@ -8,7 +8,7 @@
 
 /* Estilo para la sección de la imagen */
 .image-section {
-    width: 50%; /* Asigna un 45% de ancho a la imagen */
+    width: 50%;
 }
 
 .image-section img {
@@ -41,4 +41,43 @@
 
 #noticias-section {
     width: 50%;
+    gap: 10px;
+}
+
+@media (max-width: 800px) {
+    .noticias-section h2 {
+        margin-bottom: 5px;
+        color: #333; /* Color de texto */
+        font-size: 15px;
+    }
+
+    /* Estilo para los párrafos de noticias */
+    .noticias-section p {
+        margin-bottom: 10px;
+        color: #555; /* Color de texto */
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .main-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #noticias-section {
+        display: grid;
+        grid-template-columns: 1fr; /* Una sola columna para móviles pequeños */
+        width: 100%;
+    }
+
+    .noticias-section {
+        grid-column: span 1; /* Cada noticia ocupará toda la fila */
+    }
+
+    .image-section {
+        width: 100%;
+    }
 }

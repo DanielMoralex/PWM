@@ -62,7 +62,7 @@
               return response.json();
             })
             .then(data => {
-              console.log("Datos recibidos del JSON:", data); // Para depuración
+              console.log("Datos recibidos del JSON:", data);
 
               const imagenFachada = data.find(img => img.id === 1);
 

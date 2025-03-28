@@ -6,10 +6,6 @@ footer html, footer body {
   border-top: #48b897 solid 2px;
 }
 
-footer main {
-  flex: 1;
-}
-
 footer {
   display: flex;
   background-color: #5ad7ac;
@@ -31,5 +27,15 @@ footer {
 footer p {
   display: flex;
   margin-right: 100px;
-  font-size: 1.1rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 660px) {
+  footer {
+    flex-direction: column;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
 }
