@@ -8,10 +8,10 @@ body {
 
 .container {
   display: flex;
-  justify-content: space-between; /* Distribuye los elementos con el mismo espacio entre ellos */
-  align-items: center; /* Centra los elementos verticalmente */
-  max-width: 100%; /* Máximo ancho para evitar que los elementos se salgan */
-  gap: 60px; /* Ajusta la separación entre los elementos */
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  gap: 60px;
   margin: 120px 80px;
 }
 
@@ -19,9 +19,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     min-width: auto;
-    width: 200px; /* Tamaño fijo para los lados */
-    margin-left: 50px;
+    width: 200px;
+}
+
+#izquierda p {
+  text-align: center;
 }
 
 .notas_section {
@@ -34,36 +38,66 @@ body {
 .notas_section h3 {
   padding-top: 10px;
   padding-left: 10px;
-  color: #333; /* Color de texto */
+  color: #333;
 }
 
 .notas_section p {
   padding-bottom: 10px;
   padding-left: 10px;
-  color: #555; /* Color de texto */
+  color: #555;
 }
 
 .center-image {
   border: 3px solid #81D2D0;
   border-radius: 10px;
-  max-width: 400px;
+  max-width: 500px;
   height: auto;
 
 }
 
-.user-name {
-  border: 0;
-  margin-top: 20px;
-  width: 100%;
-  font-size: large;
-  box-sizing: border-box; /* Asegura que padding/border no afecten el tamaño total */
-}
-
-@media (max-width: 1200) {
+@media (max-width: 1200px) {
   .container {
-    margin-left: 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
+  }
+
+  #izquierda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-image {
+    align-self: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-image {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-image {
+    max-width: 160px;
+  }
+
+  .center-image {
+    max-width: 400px;
+  }
+
+  .notas_section h3 {
+    font-size: smaller;
+  }
+
+  .notas_section p {
+    font-size: smaller;
   }
 }
