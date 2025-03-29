@@ -17,31 +17,32 @@ main {
 
 .container {
   display: flex;
-  justify-content: space-evenly; /* Distribuye los elementos con el mismo espacio entre ellos */
-  align-items: center; /* Centra los elementos verticalmente */
-  width: 100%; /* Ocupa el ancho disponible*/
-  max-width: 1200px; /* Máximo ancho para evitar que los elementos se salgan */
-  gap: 100px; /* Ajusta la separación entre los elementos */
-  margin: 0 auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  gap: 60px;
+  margin: 120px 80px;
 }
 
 .left-image {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra horizontalmente */
-  justify-content: center; /* Centra verticalmente */
-  width: 200px; /* Tamaño fijo para los lados */
+  align-items: center;
+  justify-content: center;
+  width: 200px;
   padding: 10px;
+}
+
+#izquierda p {
+  text-align: center;
 }
 
 .right-section {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra horizontalmente */
-  justify-content: center; /* Centra verticalmente */
-  width: 200px; /* Tamaño fijo para los lados */
+  align-items: center;
+  justify-content: center;
+  width: 200px;
   flex: 1;
   background-color: white;
   padding: 10px;
@@ -51,10 +52,7 @@ main {
 }
 
 .center-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 800px; /* Tamaño fijo para la imagen central */
+  max-width: 500px;
   height: auto;
   border: 3px solid #81D2D0;
   border-radius: 10px;
@@ -69,4 +67,51 @@ img {
 .reuniones {
   font-size: 16px;
   color: #333;
+}
+
+@media (max-width: 1300px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  #izquierda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-image {
+    align-self: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-image {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-image {
+    max-width: 160px;
+  }
+
+  .center-image {
+    max-width: 400px;
+  }
+
+  .right-section {
+    font-size: smaller;
+  }
+
+  .reuniones {
+    font-size: 13px;
+  }
 }
