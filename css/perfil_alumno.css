@@ -58,3 +58,12 @@ body {
   font-size: large;
   box-sizing: border-box; /* Asegura que padding/border no afecten el tamaño total */
 }
+
+@media (max-width: 1200) {
+  .container {
+    margin-left: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}

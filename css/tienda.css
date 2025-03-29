@@ -69,14 +69,24 @@ button:hover {
         justify-self: center;
         align-self: center;
         font-size: 1rem;
+        padding: 0px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 950px) {
     .contenedor {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 80px;
+        justify-content: center;
         align-items: center;
+    }
+
+    .imagen-izquierda {
+        padding-left: 0px;
+    }
+
+    .imagen-central {
+        padding-right: 0px;
     }
 }
