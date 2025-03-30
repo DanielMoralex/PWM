@@ -30,6 +30,12 @@ footer p {
   font-size: 1rem;
 }
 
+.copyright {
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+}
+
 @media (max-width: 660px) {
   footer {
     flex-direction: column;
