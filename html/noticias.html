@@ -32,6 +32,16 @@
 <script>
     document.addEventListener('DOMContentLoaded', init);
 
+    function init() {
+
+        loadTemplate('./header.html', 'header');
+        loadTemplate('./footer.html', 'footer');
+
+        cargarImagenes();
+        cargarSidebar();
+
+    }
+
     function loadTemplate(fileName, id, callback) {
 
         fetch(fileName).then((res) => {
@@ -44,16 +54,6 @@
                 callback();
             }
         })
-    }
-
-    function init() {
-
-        loadTemplate('./header.html', 'header');
-        loadTemplate('./footer.html', 'footer');
-
-        cargarImagenes();
-        cargarSidebar();
-
     }
 
     function cargarImagenes() {
