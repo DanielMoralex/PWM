@@ -60,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "disable.download.node.interpreter.editor.notification": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "sprint3",
     "last_opened_file_path": "C:/Users/ivanp/WebstormProjects/PWM/img",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -132,7 +132,7 @@
       <workItem from="1743606984833" duration="4069000" />
       <workItem from="1744048801710" duration="117000" />
       <workItem from="1744049127824" duration="2455000" />
-      <workItem from="1744127631218" duration="763000" />
+      <workItem from="1744127631218" duration="1286000" />
     </task>
     <servers />
   </component>
