@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="884c666d-2783-4108-896d-bb1ff47bb97e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprint3/src/app/components/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/sprint3/src/app/components/footer/footer.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprint3/src/app/components/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/sprint3/src/app/components/header/header.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,33 +49,33 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.cuestionario_reg.html.executor": "Run",
-    "JavaScript Debug.header.html.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Run",
-    "JavaScript Debug.noticias.html.executor": "Run",
-    "JavaScript Debug.perfil_alumno.html.executor": "Run",
-    "JavaScript Debug.perfil_profesor.html.executor": "Run",
-    "JavaScript Debug.tienda.html.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "disable.download.node.interpreter.editor.notification": "true",
-    "git-widget-placeholder": "sprint3",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/ivanp/WebstormProjects/PWM/img",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Angular CLI Server.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\ivanp\\WebstormProjects\\PWM\\sprint3\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.cuestionario_reg.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.header.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.noticias.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.perfil_alumno.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.perfil_profesor.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.tienda.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;disable.download.node.interpreter.editor.notification&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sprint3&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ivanp/WebstormProjects/PWM/img&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ivanp\\WebstormProjects\\PWM\\sprint3\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ivanp\WebstormProjects\PWM\img" />
@@ -145,7 +143,7 @@
       <workItem from="1744817211590" duration="758000" />
       <workItem from="1744818412707" duration="5873000" />
       <workItem from="1744984335744" duration="3300000" />
-      <workItem from="1745009418467" duration="4743000" />
+      <workItem from="1745009418467" duration="5185000" />
     </task>
     <servers />
   </component>
