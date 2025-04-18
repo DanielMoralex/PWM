@@ -6,8 +6,8 @@ footer {
   justify-content: space-between;
   margin-bottom: 0;
   border-top: #48b897 solid 4px;
-  padding-bottom: 40px;
-  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-top: 28px;
 }
 
 .social-icons {
@@ -43,30 +43,46 @@ footer p {
   text-align: center;
   width: 100%;
   font-size: 1.2rem;
+  background-color: #5ad7ac;
+  padding-bottom: 10px;
 }
 
-@media (max-width: 600px) {
-  footer {
+@media (max-width: 1000px) {
+  .footer-left {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
     flex-direction: column;
   }
 
-  footer p {
-    font-size: 0.8rem;
+  .footer-right {
+    gap: 10px;
+    display: flex;
     margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 780px) {
+  footer {
+    height: 43vw;
   }
 
   .footer-left {
     gap: 10px;
     display: flex;
     align-items: center;
+    padding: 0;
+    margin: 0;
     flex-direction: column;
   }
 
-  .footer-roght {
+  .footer-right {
     gap: 10px;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
   }
 }
-
