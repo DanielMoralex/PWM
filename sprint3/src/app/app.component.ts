@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ColegioComponent} from './components/colegio/colegio.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ import { ColegioComponent} from './components/colegio/colegio.component';
   imports: [
     RouterOutlet,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
