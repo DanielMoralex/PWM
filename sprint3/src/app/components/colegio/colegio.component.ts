@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-colegio',
   standalone: true,
   templateUrl: './colegio.component.html',
-  standalone: true,
   styleUrl: './colegio.component.css'
 })
 export class ColegioComponent {}
