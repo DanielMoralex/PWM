@@ -1,9 +1,36 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { Routes, provideRouter } from '@angular/router';
+import { ColegioComponent } from './components/colegio/colegio.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { PerfilProfesorComponent } from './components/perfil-profesor/perfil-profesor.component';
+import { PerfilAlumnoComponent} from './components/perfil-alumno/perfil-alumno.component';
 
-import { routes } from './app.routes';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+const routes: Routes = [
+  {
+    path: '',
+    component: ColegioComponent
+  },
+  {
+    path: 'registro',
+    component: RegistroComponent
+  },
+  {
+    path: 'inicio',
+    component: InicioComponent
+  },
+  {
+    path: 'perfil-alumno',
+    component: PerfilAlumnoComponent
+  },
+  {
+    path: 'perfil-profesor',
+    component: PerfilProfesorComponent
+  }
+];
 
-export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay())]
+export const appConfig = {
+  providers: [
+    provideRouter(routes)
+  ]
 };
+
