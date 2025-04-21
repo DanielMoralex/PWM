@@ -1,6 +1,14 @@
 import { Routes } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
+import { ColegioComponent } from './components/colegio/colegio.component';
+import { RegistroComponent} from './components/registro/registro.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { PerfilAlumnoComponent} from './components/perfil-alumno/perfil-alumno.component';
+import { PerfilProfesorComponent} from './components/perfil-profesor/perfil-profesor.component';
 
 export const routes: Routes = [
-  { path: '', component: HeaderComponent },
+  { path: '', component: ColegioComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'inicio', component: InicioComponent },
+  { path: 'perfil-alumno', component: PerfilAlumnoComponent },
+  { path: 'perfil-profesor', component: PerfilProfesorComponent },
 ];
