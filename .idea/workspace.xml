@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="884c666d-2783-4108-896d-bb1ff47bb97e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint3/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sprint3/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint3/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/sprint3/src/app/app.routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +108,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.25659.40" />
       </set>
     </attachedChunks>
   </component>
@@ -144,9 +146,9 @@
       <workItem from="1744818412707" duration="5873000" />
       <workItem from="1744984335744" duration="3300000" />
       <workItem from="1745009418467" duration="5185000" />
-      <workItem from="1745226722070" duration="223000" />
-      <workItem from="1745227029791" duration="88000" />
-      <workItem from="1745255391759" duration="77000" />
+      <workItem from="1745017787797" duration="96000" />
+      <workItem from="1745226114757" duration="416000" />
+      <workItem from="1745226829877" duration="2593000" />
     </task>
     <servers />
   </component>
