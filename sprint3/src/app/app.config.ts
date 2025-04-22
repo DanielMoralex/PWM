@@ -4,6 +4,8 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { PerfilProfesorComponent } from './components/perfil-profesor/perfil-profesor.component';
 import { PerfilAlumnoComponent} from './components/perfil-alumno/perfil-alumno.component';
+import { TiendaComponent } from './components/tienda/tienda.component';
+import { NoticiasComponent} from './components/noticias/noticias.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,14 @@ const routes: Routes = [
   {
     path: 'perfil-profesor',
     component: PerfilProfesorComponent
+  },
+  {
+    path: 'tienda',
+    component: TiendaComponent
+  },
+  {
+    path: 'noticias',
+    component: NoticiasComponent
   }
 ];
 

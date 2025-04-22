@@ -1,0 +1,92 @@
+.contenedor {
+  display: flex;               /* Distribuye los elementos en fila */
+  justify-content: space-between;     /* Centra los bloques en el contenedor */
+  align-items: center;         /* Centra los elementos verticalmente */
+  margin-bottom: 80px;
+  margin-top: 40px;
+}
+
+.imagen-izquierda img,
+.imagen-central img {
+  width: 400px;               /* Tamaño de las imágenes */
+  border-radius: 20px;        /* Bordes redondeados */
+}
+
+.imagen-izquierda {
+  padding-left: 40px;
+  display: flex;              /* Permite alinear los botones debajo */
+  flex-direction: column;     /* Alineación vertical */
+  align-items: center;        /* Centra los elementos */
+  gap: 20px;                  /* Espacio entre imagen y botones */
+}
+
+.imagen-central {
+  display: flex;              /* Permite alinear los botones debajo */
+  flex-direction: column;     /* Alineación vertical */
+  align-items: center;        /* Centra los elementos */
+  gap: 20px;                  /* Espacio entre imagen y botones */
+  padding-right: 100px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #81D2D0;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.boton-derecha {
+  display: flex;
+  gap: 20px;
+  font-size: 1.5rem;
+  margin-right: 140px;
+  background-color: #81D2D0;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: #ADE1E5;
+}
+
+@media (max-width: 1200px) {
+  .contenedor {
+    margin-left: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .boton-derecha {
+    justify-self: center;
+    align-self: center;
+    font-size: 1rem;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 950px) {
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imagen-izquierda {
+    padding-left: 0px;
+  }
+
+  .imagen-central {
+    padding-right: 0px;
+  }
+}

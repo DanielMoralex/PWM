@@ -1,0 +1,82 @@
+.main-content {
+  display: flex; /* Usamos Flexbox para alinear la imagen y el bloque de noticias */
+  justify-content: space-between; /* Espacio entre la imagen y las noticias */
+  padding: 30px;
+  gap: 15px;
+}
+
+/* Estilo para la sección de la imagen */
+.image-section {
+  width: 50%;
+}
+
+.image-section img {
+  width: 100%; /* La imagen ocupará todo el ancho disponible de su contenedor */
+  height: auto; /* Mantener la relación de aspecto de la imagen */
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+/* Estilo para la sección de noticias */
+.noticias-section {
+  width: 95%;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Estilo para los títulos de las noticias */
+.noticias-section h2 {
+  margin-bottom: 15px;
+  color: #333; /* Color de texto */
+}
+
+/* Estilo para los párrafos de noticias */
+.noticias-section p {
+  margin-bottom: 21px;
+  color: #555; /* Color de texto */
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+#noticias-section {
+  width: 50%;
+  gap: 10px;
+}
+
+@media (max-width: 800px) {
+  .noticias-section h2 {
+    margin-bottom: 5px;
+    color: #333; /* Color de texto */
+    font-size: 15px;
+  }
+
+  /* Estilo para los párrafos de noticias */
+  .noticias-section p {
+    margin-bottom: 10px;
+    color: #555; /* Color de texto */
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #noticias-section {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna para móviles pequeños */
+    width: 100%;
+  }
+
+  .noticias-section {
+    grid-column: span 1; /* Cada noticia ocupará toda la fila */
+  }
+
+  .image-section {
+    width: 100%;
+  }
+}
