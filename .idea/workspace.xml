@@ -80,7 +80,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Portatil\\Desktop\\Colegio\\sprint3\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ivanp\\WebstormProjects\\PWM\\sprint3\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -89,11 +89,11 @@
       <recent name="C:\Users\ivanp\WebstormProjects\PWM\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Portatil\Desktop\Colegio\sprint3\src\app\components" />
       <recent name="C:\Users\ivanp\WebstormProjects\PWM\sprint3\src\assets" />
       <recent name="C:\Users\ivanp\WebstormProjects\PWM\sprint3\src\images" />
       <recent name="C:\Users\ivanp\WebstormProjects\PWM\json" />
       <recent name="C:\Users\ivanp\WebstormProjects\PWM\html" />
+      <recent name="C:\Users\ivanp\WebstormProjects\PWM\img" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -114,7 +114,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.25659.40" />
       </set>
     </attachedChunks>
   </component>
@@ -155,7 +155,10 @@
       <workItem from="1745017787797" duration="96000" />
       <workItem from="1745226114757" duration="416000" />
       <workItem from="1745226829877" duration="2593000" />
+<<<<<<< HEAD
       <workItem from="1745338166418" duration="2490000" />
+=======
+>>>>>>> f2e4fadf5691652a092cd08a21aba6073595bb54
     </task>
     <servers />
   </component>
