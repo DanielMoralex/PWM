@@ -6,6 +6,8 @@ import { PerfilProfesorComponent } from './components/perfil-profesor/perfil-pro
 import { PerfilAlumnoComponent} from './components/perfil-alumno/perfil-alumno.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { NoticiasComponent} from './components/noticias/noticias.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 const routes: Routes = [
   {
@@ -40,7 +42,7 @@ const routes: Routes = [
 
 export const appConfig = {
   providers: [
-    provideRouter(routes)
+    provideRouter(routes), provideFirebaseApp(() => initializeApp({ projectId: "colegio-990ed", appId: "1:464463498165:web:b90fb6ce2ad832f1bb27fc", storageBucket: "colegio-990ed.firebasestorage.app", apiKey: "AIzaSyC-in5TC-lPvOdUrahqJWfzm5mxbddtZlc", authDomain: "colegio-990ed.firebaseapp.com", messagingSenderId: "464463498165", measurementId: "G-PPZH6S6WJE" })), provideFirestore(() => getFirestore())
   ]
 };
 
