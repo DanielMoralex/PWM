@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc} from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc, query, where, getDocs } from '@angular/fire/firestore';
 import Usuario from '../models/Usuario'
 
 @Injectable({
@@ -19,6 +19,18 @@ export class UsuarioService {
   read(): Observable<Usuario[]> {
     const usuarioRef = collection(this.firestore, 'usuario');
     return collectionData(usuarioRef, {idField: 'id'}) as Observable<Usuario[]>;
+  }
+
+  async getUsuarioByEmail(email: string): Promise<Usuario | null> {
+    const usuarioRef = collection(this.firestore, 'usuario');
+    const q = query(usuarioRef, where("email", "==", email));
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.empty) {
+      return null;
+    } else {
+      const usuarioDoc = querySnapshot.docs[0];
+      return usuarioDoc.data() as Usuario;
+    }
   }
 
   update(id: string, usuario: Usuario) {

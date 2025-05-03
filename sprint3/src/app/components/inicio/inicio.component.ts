@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import {UsuarioService} from '../../services/usuario.service';
 
 @Component({
   selector: 'app-inicio',
@@ -14,31 +15,34 @@ export class InicioComponent {
   email = '';
   password = '';
 
-  constructor (private router: Router) {}
+  constructor(
+    private router: Router,
+    private usuarioService: UsuarioService
+  ) {}
 
-  onLogin() {
-    const storedProfileJSON = localStorage.getItem('perfil');
-    if (!storedProfileJSON) {
-      alert('❌ No hay usuarios registrados. Regístrate primero.');
+  async onLogin() {
+    // Verificar si el usuario existe en la base de datos
+    const usuario = await this.usuarioService.getUsuarioByEmail(this.email);
+
+    if (!usuario) {
+      alert('❌ No hay usuarios registrados con ese correo. Regístrate primero.');
       return;
     }
 
-    const storedProfile = JSON.parse(storedProfileJSON);
-
-    if (storedProfile.email === this.email && storedProfile.password === this.password) {
+    // Verificar la contraseña
+    if (usuario.password === this.password) {
       alert('✅ Inicio de sesión exitoso.');
 
-      const encodedName = encodeURIComponent(storedProfile.email);
+      // Codificar el email
+      const encodedName = encodeURIComponent(usuario.email);
 
-      if (storedProfile.role === 'profesor') {
-        alert("Se va a redirigir a 'Mi Página'");
+      // Redirigir según el rol del usuario
+      if (usuario.role === 'profesor') {
         this.router.navigate(['perfil-profesor'], { queryParams: { user: encodedName } });
       } else {
         this.router.navigate(['perfil-alumno'], { queryParams: { user: encodedName } });
       }
-    }
-
-    else {
+    } else {
       alert('❌ Correo o contraseña incorrectos.');
     }
   }
