@@ -1,46 +1,47 @@
 .main-content {
-  display: flex; /* Usamos Flexbox para alinear la imagen y el bloque de noticias */
-  justify-content: space-between; /* Espacio entre la imagen y las noticias */
-  padding: 30px;
-  gap: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap; /* Esto permite que se adapte en pantallas pequeñas */
 }
 
-/* Estilo para la sección de la imagen */
 .image-section {
-  width: 50%;
+  flex: 1;
+  max-width: 400px;
 }
 
-.image-section img {
-  width: 100%; /* La imagen ocupará todo el ancho disponible de su contenedor */
-  height: auto; /* Mantener la relación de aspecto de la imagen */
-  border-radius: 10px; /* Bordes redondeados para la imagen */
-}
-
-/* Estilo para la sección de noticias */
-.noticias-section {
-  width: 95%;
-  background-color: #f4f4f4;
-  padding: 20px;
+.image {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
-/* Estilo para los títulos de las noticias */
-.noticias-section h2 {
-  margin-bottom: 15px;
-  color: #333; /* Color de texto */
+.noticias-container {
+  flex: 2;
+  max-width: 700px;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para los párrafos de noticias */
-.noticias-section p {
-  margin-bottom: 21px;
-  color: #555; /* Color de texto */
-  font-size: 21px;
-  line-height: 1.6;
+.noticia-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #007BFF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-#noticias-section {
-  width: 50%;
-  gap: 10px;
+.noticia-card h4 {
+  margin: 0 0 0.5rem 0;
+}
+
+.noticia-card p {
+  margin: 0;
 }
 
 @media (max-width: 800px) {

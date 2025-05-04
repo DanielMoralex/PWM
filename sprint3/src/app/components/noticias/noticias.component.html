@@ -2,13 +2,12 @@
   <div class="image-section">
     <img src="assets/fotoRobotica.jpg" alt="Imagen de ejemplo" class="image">
   </div>
-  <div id="noticias-section">
+
+  <div id="noticias-section" class="noticias-container">
     <h3>Últimas Noticias</h3>
-    <ul>
-      <li *ngFor="let noticia of noticias">
-        <strong>{{ noticia.titulo }}</strong><br>
-        <p>{{ noticia.contenido }}</p>
-      </li>
-    </ul>
+    <div *ngFor="let noticia of noticias" class="noticia-card">
+      <h4>{{ noticia.titulo }}</h4>
+      <p>{{ noticia.contenido }}</p>
+    </div>
   </div>
 </div>
