@@ -3,6 +3,12 @@
     <img src="assets/fotoRobotica.jpg" alt="Imagen de ejemplo" class="image">
   </div>
   <div id="noticias-section">
-    <!-- El contenido del sidebar se insertará aquí -->
+    <h3>Últimas Noticias</h3>
+    <ul>
+      <li *ngFor="let noticia of noticias">
+        <strong>{{ noticia.titulo }}</strong><br>
+        <p>{{ noticia.contenido }}</p>
+      </li>
+    </ul>
   </div>
 </div>
