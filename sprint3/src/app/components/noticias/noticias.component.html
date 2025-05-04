@@ -7,7 +7,6 @@
     <ul>
       <li *ngFor="let noticia of noticias">
         <strong>{{ noticia.titulo }}</strong><br>
-        <small>{{ noticia.fecha | date: 'shortDate' }}</small>
         <p>{{ noticia.contenido }}</p>
       </li>
     </ul>
